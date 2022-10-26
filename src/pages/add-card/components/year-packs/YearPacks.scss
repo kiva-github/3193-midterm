@@ -1,0 +1,15 @@
+.year-packs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .year-packs {
+        display: flex;
+        gap: 48px;
+    }
+
+    h2 {
+        color: #FFFFFF;
+        margin: 0;
+    }
+}

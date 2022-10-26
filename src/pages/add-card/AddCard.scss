@@ -1,3 +1,6 @@
 .add-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
     padding: 0px 250px;
 }
