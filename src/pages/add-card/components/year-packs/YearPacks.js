@@ -13,7 +13,7 @@ export default function YearPacks() {
     <h2>2022</h2>
     <div className='year-packs'>
         {PACKS_DATA && PACKS_DATA.map((pack) => (
-            <PackCard alt={pack.alt} img={pack.img} title={pack.img} path={pack.path}/>
+            <PackCard key={pack.path} alt={pack.alt} img={pack.img} title={pack.img} path={pack.path}/>
         ))}
     </div>
 </div>

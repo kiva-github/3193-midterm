@@ -5,6 +5,7 @@ import './App.css';
 import AccountSettings from './pages/account-settings/AccountSettings';
 import AddCard from './pages/add-card/AddCard';
 import Authentication from './pages/authentication/Authentication';
+import Collection from './pages/collection/Collection';
 import Home from './pages/home/Home';
 import MainPage from './pages/main-page/MainPage';
 
@@ -25,6 +26,7 @@ function App() {
               <Route path='' element={<YearPacks />} />
               <Route path=':series' element={<SeriesCardTypes />} />
             </Route>
+            <Route path=':year/:collection' element={<Collection />} />
           </Route>
         </Routes>
       </BrowserRouter>
