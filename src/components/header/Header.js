@@ -1,8 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // hooks
 import { useAuthContext } from '../../hooks/useAuthContext'
-import { useLogout } from '../../hooks/useLogout'
 import { useUserContext } from '../../hooks/useUserContext'
 
 // styles
@@ -10,7 +10,6 @@ import './Header.scss'
 
 // assets
 import logo from '../../assets/system/card-vault-logo.png'
-import SecondaryBtn from '../btns/secondary-btn/SecondaryBtn'
 
 // components
 import CardCount from '../card-count/CardCount'
@@ -23,7 +22,7 @@ export default function Header({ setAuthToggle }) {
   const [active, setActive] = useState('login')
   const { user } = useAuthContext()
   const { cardCount, teamIndex } = useUserContext()
-  const { logOut } = useLogout()
+  const navigate = useNavigate()
 
   const handleClick = (t) => {
     setAuthToggle(t)
@@ -42,19 +41,19 @@ export default function Header({ setAuthToggle }) {
       }
 
       {user &&
-        <div className='header-profile' onClick={logOut}>
+        <div className='header-profile'>
           <div className='profile-info'>
             <h1>Hello, {user.displayName}</h1>
-            {cardCount && <CardCount count={cardCount}/>}
-            
+            <CardCount count={cardCount}/>            
           </div>
           {teamIndex && 
-          <img className='profile-img' src={ TEAM_LOGOS[teamIndex].logo } alt='profile img' />
+            <div onClick={() => navigate('/account')}>
+              <img className='profile-img' src={ TEAM_LOGOS[teamIndex].logo } alt='profile img' />
+            </div>
           }
-          <SecondaryBtn title={'LOG OUT'} />
         </div>
       }
-
+      
     </header>
   )
 }

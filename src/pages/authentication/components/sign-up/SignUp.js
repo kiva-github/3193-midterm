@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // components
 import InputBar from '../../../../components/input-bar/InputBar'
@@ -22,6 +22,13 @@ export default function SignUp({ col }) {
   const handleChange = (e) => {
     setFavoriteTeam(e.target.value)
   }
+
+  useEffect(() => {
+    if (error === 'Passwords do not match') {
+      setPassword('')
+      setConfirmPassword('')
+    }
+  }, [error])
 
   return (
     <div className='sign-up-container'>
@@ -80,7 +87,7 @@ export default function SignUp({ col }) {
         {!isPending && <PrimaryBtn title='SIGN UP'/>}
         {isPending && <PrimaryBtn title='LOADING...'/>}
       </div>
-      {error && <p>{error.message}</p>}
+      {error && <p className='error'>{error}</p>}
     </div> 
   )
 }

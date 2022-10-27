@@ -23,8 +23,8 @@ export default function LogIn({ col }) {
   return (
     <div className='log-in-container'>
       <InputsContainer>
-          <InputBar type='email' col={col} pH='EMAIL' value={email} updateValue={setEmail}/>
-          <InputBar type='password' col={col} pH='PASSWORD' value={password} updateValue={setPassword}/>
+          <InputBar type='email' pH='EMAIL' col={col} value={email} updateValue={setEmail}/>
+          <InputBar type='password' pH='PASSWORD' col={col} value={password} updateValue={setPassword}/>
       </InputsContainer>
       {!isPending &&
         <div onClick={handleLogin}>

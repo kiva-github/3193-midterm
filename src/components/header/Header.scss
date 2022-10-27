@@ -62,10 +62,11 @@
 
         .profile-img {
             border-radius: 50%;
-            height: 60px;
+            cursor: pointer;
+            height: 80px;
             object-fit: contain;
             position: relative;
-            width: 60px;
+            width: 80px;
         }
 
         h1 {
