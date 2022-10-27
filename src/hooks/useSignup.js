@@ -1,12 +1,12 @@
 import { useState } from "react";
 
+// context
+import { useAuthContext } from './useAuthContext';
+
 // firebase
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 import { auth, db } from '../utils/firebase/config'
-
-// hooks
-import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
     const [error, setError] = useState(null)
@@ -39,8 +39,7 @@ export const useSignup = () => {
                 // create user docs
                 await setDoc(doc(db, 'users', res.user.uid), {
                     favoriteTeam: favoriteTeam,
-                    cardCount: 0,
-                    cards: []
+                    cardCount: 0
                 })
 
                 // dispatch LOG_IN

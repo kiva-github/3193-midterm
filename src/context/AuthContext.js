@@ -3,6 +3,7 @@ import { createContext, useEffect, useReducer } from "react";
 // firebase
 import { auth } from "../utils/firebase/config";
 
+// context
 export const AuthContext = createContext()
 
 export const authReducer = (state, action) => {
@@ -31,6 +32,7 @@ export const AuthContextProvider = ({ children }) => {
             unsub()
         })
     }, [])
+
     // console.log('AuthContext state:', state)
 
     return (

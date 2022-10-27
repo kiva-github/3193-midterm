@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
+// context
+import { useAuthContext } from './useAuthContext'
+
 // firebase 
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../utils/firebase/config'
-
-// context
-import { useAuthContext } from './useAuthContext'
 
 export const useFirestore = () => {
     const [favoriteTeam, setFavoriteTeam] = useState(null)
@@ -30,6 +30,5 @@ export const useFirestore = () => {
             setError(err.message)
         }
     }
-
     return { cardCount, error, favoriteTeam, getUserDocs }
 }

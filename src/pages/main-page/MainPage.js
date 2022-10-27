@@ -18,6 +18,7 @@ export default function MainPage() {
   
   useEffect(() => {
     getUserDocs()
+    console.log('MainPage.js: useEffect() ran')
   }, [getUserDocs])
 
   return (

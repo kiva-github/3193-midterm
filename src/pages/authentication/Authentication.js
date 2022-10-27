@@ -12,9 +12,9 @@ import { GRADIENT_DATA } from '../../data/gradients'
 import './Authentication.scss'
 
 export default function Authentication() {
-    const [randomInt, setRandomInt] = useState(null)
     const [authToggle, setAuthToggle] = useState('login')
-
+    const [randomInt, setRandomInt] = useState(null)
+    
     useEffect(() => {   
         let random = Math.floor(Math.random() * 30)
         if (random === 0) {

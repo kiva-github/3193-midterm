@@ -32,7 +32,8 @@ export const UserContextProvider = ({ children }) => {
         dispatch({ type: 'UPDATE_TEAM', payload: favoriteTeam})
         dispatch({ type: 'UPDATE_CARD_COUNT', payload: cardCount})
     }, [cardCount, favoriteTeam])
-    console.log('UserContext state:', state)
+
+    // console.log('UserContext state:', state)
 
     return (
         <UserContext.Provider value={{ ...state, dispatch }}>

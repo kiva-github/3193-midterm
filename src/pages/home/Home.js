@@ -73,7 +73,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='cards-row-container'>
+        <div className='cards-row-container explore-content'>
           <div className='row-header'>
             <h2>EXPLORE</h2>
           </div>
