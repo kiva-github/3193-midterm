@@ -1,21 +1,19 @@
-import {
-    createUserWithEmailAndPassword,
-    updateProfile
- } from 'firebase/auth'
-
 import { useState } from "react";
-import { auth } from '../utils/firebase/config'
+
+// firebase
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { doc, setDoc } from 'firebase/firestore'
+import { auth, db } from '../utils/firebase/config'
 
 // hooks
 import { useAuthContext } from './useAuthContext';
-
 
 export const useSignup = () => {
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(false)
     const { dispatch } = useAuthContext()
 
-    const signup = async (email, password, confirmPassword, username) => {
+    const signup = async (email, password, confirmPassword, username, favoriteTeam) => {
         setError(null)
         setIsPending(true)
 
@@ -24,7 +22,6 @@ export const useSignup = () => {
             setIsPending(false)
 
         } else {
-
             try {
                 const res = await createUserWithEmailAndPassword(auth, email, password)
                 console.log(res.user)
@@ -36,6 +33,11 @@ export const useSignup = () => {
                 await updateProfile(auth.currentUser, {
                     displayName: username
                     // add Favorite team photo URL here
+                })
+
+                // create user docs
+                await setDoc(doc(db, 'users', res.user.uid), {
+                    favoriteTeam: favoriteTeam
                 })
 
                 // dispatch LOG_IN
@@ -51,7 +53,6 @@ export const useSignup = () => {
             }
         }
     }
-
     return { error, isPending, signup }
 }
 

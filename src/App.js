@@ -27,10 +27,10 @@ function App() {
             <Route path='/' element={user ? <Navigate to='/home' /> : <Authentication />} />
             <Route path='/' element={user ? <MainPage /> : <Navigate to='/'/>} >
               <Route path='/home' element={user ? <Home /> : <Navigate to='/'/>} />
-              <Route path='account' element={user? <AccountSettings /> : <Navigate to='/'/>} />
-              <Route path='add' element={<AddCard />}>
-                <Route path='' element={<YearPacks />} />
-                <Route path=':series' element={<SeriesCardTypes />} />
+              <Route path='account' element={user ? <AccountSettings /> : <Navigate to='/'/>} />
+              <Route path='add' element={user ? <AddCard /> : <Navigate to='/'/>}>
+                <Route path='' element={user ? <YearPacks /> : <Navigate to='/'/>} />
+                <Route path=':series' element={user? <SeriesCardTypes /> : <Navigate to='/'/>} />
               </Route>
               <Route path=':year/:collection' element={<Collection />} />
             </Route>
@@ -40,5 +40,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

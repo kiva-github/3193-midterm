@@ -12,7 +12,6 @@ export default function Home() {
   const [carouselIndex, setCarouselIndex] = useState(0)
   const navigate = useNavigate()
 
-
   useEffect(() => {
     let interval = null
     interval = setInterval(() => {
@@ -52,7 +51,7 @@ export default function Home() {
                 <h3>Add a card</h3>
                 <div className='card-content'></div>
               </div>
-              <div className='card' onClick={() => navigate('collection/2022')}>
+              <div className='card' onClick={() => navigate('/collection/2022')}>
                 <h3>2022</h3>
                 <div className='card-content'></div>
               </div>

@@ -14,7 +14,7 @@ export default function Collection() {
             <CollectionHeader />            
             <div className='cards-collection'>            
                 {CARDS_DATA && CARDS_DATA.map((card) => (
-                    <div>
+                    <div key={card.cardNumber}>
                         <Card img={card.imgFront}/>
                         <div className='card-number'>
                             <p>{card.cardNumber}</p>
