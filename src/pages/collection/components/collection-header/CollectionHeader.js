@@ -1,9 +1,9 @@
-// styles
-import './CollectionHeader.scss'
-
 // components
 import InputBar from '../../../../components/input-bar/InputBar'
 import SecondaryBtn from '../../../../components/btns/secondary-btn/SecondaryBtn'
+
+// styles
+import './CollectionHeader.scss'
 
 export default function CollectionHeader() {
   return (

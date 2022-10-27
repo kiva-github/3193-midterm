@@ -14,17 +14,14 @@ export default function AccountDetails() {
 
   return (
     <div className='acc-details-container'>
-
         <div className='fav-team-container'>
             <div className='fav-team-logo'></div>
             <PrimaryBtn title='CHANGE TEAM' />
         </div>
-
         <InputsContainer>
             <InputBar type={'text'} col={'51,51,51'} value={user.displayName}/>
             <InputBar type={'email'} col={'51,51,51'} value={user.email}/>
         </InputsContainer>
-        
     </div>
   )
 }

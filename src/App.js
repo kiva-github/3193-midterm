@@ -1,20 +1,19 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
-
-// hooks
-import { useAuthContext } from './hooks/useAuthContext';
-
-// pages
-import AccountSettings from './pages/account-settings/AccountSettings';
-import AddCard from './pages/add-card/AddCard';
-import Authentication from './pages/authentication/Authentication';
-import Collection from './pages/collection/Collection';
-import Home from './pages/home/Home';
-import MainPage from './pages/main-page/MainPage';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
 // components
-import SeriesCardTypes from './pages/add-card/components/series-card-types/SeriesCardTypes';
-import YearPacks from './pages/add-card/components/year-packs/YearPacks';
+import SeriesCardTypes from './pages/add-card/components/series-card-types/SeriesCardTypes'
+import YearPacks from './pages/add-card/components/year-packs/YearPacks'
+
+// hooks
+import { useAuthContext } from './hooks/useAuthContext'
+
+// pages
+import AccountSettings from './pages/account-settings/AccountSettings'
+import AddCard from './pages/add-card/AddCard'
+import Authentication from './pages/authentication/Authentication'
+import Collection from './pages/collection/Collection'
+import Home from './pages/home/Home'
+import MainPage from './pages/main-page/MainPage'
 
 function App() {
   const { authIsReady, user } = useAuthContext()
@@ -38,6 +37,6 @@ function App() {
         </BrowserRouter>
       }
     </div>
-  );
+  )
 }
-export default App;
+export default App

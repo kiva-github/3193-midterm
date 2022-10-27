@@ -3,7 +3,6 @@ import { createContext, useEffect, useReducer } from "react";
 // firebase
 import { useFirestore } from "../hooks/useFirestore";
 
-// context
 export const UserContext = createContext()
 
 export const userReducer = (state, action) => {
@@ -32,7 +31,6 @@ export const UserContextProvider = ({ children }) => {
         dispatch({ type: 'UPDATE_TEAM', payload: favoriteTeam})
         dispatch({ type: 'UPDATE_CARD_COUNT', payload: cardCount})
     }, [cardCount, favoriteTeam])
-
     // console.log('UserContext state:', state)
 
     return (

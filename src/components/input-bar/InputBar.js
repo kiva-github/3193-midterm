@@ -35,6 +35,3 @@ export default function InputBar({ type, pH="", col, value, updateValue }) {
     </>
   )
 }
-
-
-  

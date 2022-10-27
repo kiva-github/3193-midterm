@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// styles
-import './Home.scss'
-
 // assets
 import addIcon from '../../assets/system/add-icon.png'
 
@@ -16,6 +13,8 @@ import { useUserContext } from '../../hooks/useUserContext'
 // data
 import { CAROUSEL_IMAGES } from '../../data/carousel'
 
+// styles
+import './Home.scss'
 
 export default function Home() {
   const [seconds, setSeconds] = useState(0)

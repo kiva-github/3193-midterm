@@ -34,14 +34,12 @@ export default function Header({ setAuthToggle }) {
   return (
     <header className='header-container'>
       <img src={logo} alt='Cardvault logo' height='45px'/>
-      
       {!user && 
         <div className='auth-toggle'>
           <p className={active === 'signup' ? 'underline' : ''} onClick={() => handleClick('signup')}>SIGN UP</p>
           <p className={active === 'login' ? 'underline' : ''} onClick={() => handleClick('login')}>LOG IN</p>
         </div>
       }
-
       {user &&
         <div className='header-profile'>
           <div className='profile-info'>
@@ -56,10 +54,8 @@ export default function Header({ setAuthToggle }) {
           <div onClick={logOut}>
             <SecondaryBtn title={'LOG OUT'} route='' />
           </div>
-          
         </div>
       }
-      
     </header>
   )
 }

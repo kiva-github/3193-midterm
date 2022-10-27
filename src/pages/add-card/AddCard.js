@@ -1,11 +1,10 @@
 import { Outlet } from 'react-router-dom'
 
-// styles
-import './AddCard.scss'
-
 // components
 import NavHeader from '../../components/nav-header/NavHeader'
 
+// styles
+import './AddCard.scss'
 
 export default function AddCard() {
   return (
