@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-// styles
-import './SignUp.scss'
-
 // components
 import InputBar from '../../../../components/input-bar/InputBar'
 import InputsContainer from '../../../../components/inputs-container/InputsContainer'
@@ -11,13 +8,16 @@ import PrimaryBtn from '../../../../components/btns/primary-btn/PrimaryBtn'
 // hooks
 import { useSignup } from '../../../../hooks/useSignup'
 
+// styles
+import './SignUp.scss'
+
 export default function SignUp({ col }) {
+  const [favoriteTeam, setFavoriteTeam] = useState(12)
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [favoriteTeam, setFavoriteTeam] = useState(12)
   const [confirmPassword, setConfirmPassword] = useState('')
-  const { signup, isPending, error  } = useSignup()
+  const { error, isPending, signup } = useSignup()
 
   const handleChange = (e) => {
     setFavoriteTeam(e.target.value)
@@ -31,7 +31,8 @@ export default function SignUp({ col }) {
             name='teams'
             id='teams'
             onChange={handleChange}
-            style={{ backgroundColor: `rgb(${col})`}}>
+            style={{ backgroundColor: `rgb(${col})`}}
+          >
             <option value='' defaultValue>FAVORITE TEAM</option>
             <option value='' disabled>---AL WEST---</option>
               <option value='0'>Angels</option>
@@ -79,7 +80,6 @@ export default function SignUp({ col }) {
         {!isPending && <PrimaryBtn title='SIGN UP'/>}
         {isPending && <PrimaryBtn title='LOADING...'/>}
       </div>
-      
       {error && <p>{error.message}</p>}
     </div> 
   )

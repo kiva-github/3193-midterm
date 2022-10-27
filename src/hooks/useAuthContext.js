@@ -9,6 +9,5 @@ export const useAuthContext = () => {
     if (!authContext) {
         throw Error('not inside AuthContextProvider')
     }
-
     return authContext
 }

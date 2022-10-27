@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-// styles
-import './LogIn.scss'
-
 // components
 import InputBar from '../../../../components/input-bar/InputBar'
 import InputsContainer from '../../../../components/inputs-container/InputsContainer'
@@ -11,10 +8,13 @@ import PrimaryBtn from '../../../../components/btns/primary-btn/PrimaryBtn'
 // hooks
 import { useLogin } from '../../../../hooks/useLogin'
 
+// styles
+import './LogIn.scss'
+
 export default function LogIn({ col }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { logIn, error, isPending } = useLogin()
+  const { error, isPending, logIn } = useLogin()
 
   const handleLogin = () => {
     logIn(email, password)
@@ -36,8 +36,7 @@ export default function LogIn({ col }) {
           <PrimaryBtn title='LOG IN'/>
         </div>
       }
-      {error && <p>{error.message}</p>}
-      
+      {error && <p className='error'>{error}</p>}
     </div>
   )
 }

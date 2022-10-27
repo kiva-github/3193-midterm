@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { auth } from '../utils/firebase/config'
-import { useAuthContext } from './useAuthContext'
 
+// firebase
 import { signOut } from 'firebase/auth'
+import { auth } from '../utils/firebase/config'
 
+// context
+import { useAuthContext } from './useAuthContext'
 
 export const useLogout = () => {
     const [error, setError] = useState(null)
@@ -14,21 +16,16 @@ export const useLogout = () => {
         setError(null)
         setIsPending(true)
         
-
         try {
             await signOut(auth)
             dispatch({ type: 'LOG_OUT', payload: null})
             setError(null)
             setIsPending(false)
-    
-
         } catch (err) {
             console.log(err.message)
             setError(err.message)
             setIsPending(false)
         }
     }
-
-    return { logOut, error, isPending }
-
+    return { error, isPending, logOut }
 }

@@ -9,6 +9,5 @@ export const useUserContext = () => {
     if (!userContext) {
         throw Error('not inside UserContextProvider')
     }
-
     return userContext
 }

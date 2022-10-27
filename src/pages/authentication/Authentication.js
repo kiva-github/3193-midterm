@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 
-// styles
-import './Authentication.scss'
-
-// datas
-import { GRADIENT_DATA } from '../../data/gradients'
-
 // components
 import Header from '../../components/header/Header'
 import LogIn from './components/log-in/LogIn'
 import SignUp from './components/sign-up/SignUp'
+
+// data
+import { GRADIENT_DATA } from '../../data/gradients'
+
+// styles
+import './Authentication.scss'
 
 export default function Authentication() {
     const [randomInt, setRandomInt] = useState(null)

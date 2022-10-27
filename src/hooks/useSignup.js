@@ -30,6 +30,7 @@ export const useSignup = () => {
                     throw new Error('Could not complete signup')
                 }
 
+                // add username to user profile
                 await updateProfile(auth.currentUser, {
                     displayName: username
                     // add Favorite team photo URL here
@@ -47,7 +48,6 @@ export const useSignup = () => {
                 setError(null)
             }
             catch (err) {
-                console.log(err.message)
                 setError(err.message)
                 setIsPending(false)
             }
@@ -55,6 +55,3 @@ export const useSignup = () => {
     }
     return { error, isPending, signup }
 }
-
-
-
