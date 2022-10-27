@@ -46,4 +46,17 @@
             opacity: 1;
         }
     }
+
+    .header-profile {
+        align-items: center;
+        display: flex;
+        gap: 24px;
+
+        h1 {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
 }
