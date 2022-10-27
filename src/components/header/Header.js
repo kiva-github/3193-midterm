@@ -1,7 +1,9 @@
 import { useState } from 'react'
 
 // hooks
+import { useAuthContext } from '../../hooks/useAuthContext'
 import { useLogout } from '../../hooks/useLogout'
+import { useUserContext } from '../../hooks/useUserContext'
 
 // styles
 import './Header.scss'
@@ -9,11 +11,18 @@ import './Header.scss'
 // assets
 import logo from '../../assets/system/card-vault-logo.png'
 import SecondaryBtn from '../btns/secondary-btn/SecondaryBtn'
-import { useAuthContext } from '../../hooks/useAuthContext'
+
+// components
+import CardCount from '../card-count/CardCount'
+
+// data
+import { TEAM_LOGOS } from '../../data/team-logos'
+
 
 export default function Header({ setAuthToggle }) {
   const [active, setActive] = useState('login')
   const { user } = useAuthContext()
+  const { cardCount, teamIndex } = useUserContext()
   const { logOut } = useLogout()
 
   const handleClick = (t) => {
@@ -34,8 +43,14 @@ export default function Header({ setAuthToggle }) {
 
       {user &&
         <div className='header-profile' onClick={logOut}>
-          <h1>Hello, {user.displayName}</h1>
-
+          <div className='profile-info'>
+            <h1>Hello, {user.displayName}</h1>
+            {cardCount && <CardCount count={cardCount}/>}
+            
+          </div>
+          {teamIndex && 
+          <img className='profile-img' src={ TEAM_LOGOS[teamIndex].logo } alt='profile img' />
+          }
           <SecondaryBtn title={'LOG OUT'} />
         </div>
       }

@@ -4,13 +4,24 @@ import { useNavigate } from 'react-router-dom'
 // styles
 import './Home.scss'
 
+// assets
+import addIcon from '../../assets/system/add-icon.png'
+
+// components
+import CardCount from '../../components/card-count/CardCount'
+
+// context
+import { useUserContext } from '../../hooks/useUserContext'
+
 // data
 import { CAROUSEL_IMAGES } from '../../data/carousel'
+
 
 export default function Home() {
   const [seconds, setSeconds] = useState(0)
   const [carouselIndex, setCarouselIndex] = useState(0)
   const navigate = useNavigate()
+  const { cardCount } = useUserContext()
 
   useEffect(() => {
     let interval = null
@@ -49,11 +60,15 @@ export default function Home() {
           <div className='cards'>
               <div className='card' onClick={() => navigate('/add')}>
                 <h3>Add a card</h3>
-                <div className='card-content'></div>
+                <div className='card-content'>
+                  <img className='add-icon' src={addIcon} alt='' />
+                </div>
               </div>
               <div className='card' onClick={() => navigate('/collection/2022')}>
                 <h3>2022</h3>
-                <div className='card-content'></div>
+                <div className='card-content'>
+                  <CardCount count={cardCount}/>
+                </div>
               </div>
           </div>
         </div>
@@ -61,7 +76,6 @@ export default function Home() {
         <div className='cards-row-container'>
           <div className='row-header'>
             <h2>EXPLORE</h2>
-             {/* add View All btn here eventually */}
           </div>
           
           <div className='cards'>

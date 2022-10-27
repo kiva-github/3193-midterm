@@ -38,7 +38,8 @@ export const useSignup = () => {
 
                 // create user docs
                 await setDoc(doc(db, 'users', res.user.uid), {
-                    favoriteTeam: favoriteTeam
+                    favoriteTeam: favoriteTeam,
+                    numOfCards: 0
                 })
 
                 // dispatch LOG_IN

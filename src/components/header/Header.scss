@@ -50,10 +50,25 @@
     .header-profile {
         align-items: center;
         display: flex;
-        gap: 24px;
+        gap: 12px;
+        text-align: right;
+
+        .profile-info {
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            height: 60px;
+            object-fit: contain;
+            position: relative;
+            width: 60px;
+        }
 
         h1 {
-            color: #FFFFFF;
             font-size: 16px;
             font-weight: 600;
             margin: 0;

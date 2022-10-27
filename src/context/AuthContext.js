@@ -1,8 +1,9 @@
 import { createContext, useEffect, useReducer } from "react";
+
+// firebase
 import { auth } from "../utils/firebase/config";
 
 export const AuthContext = createContext()
-
 
 export const authReducer = (state, action) => {
     switch (action.type) {
@@ -29,8 +30,6 @@ export const AuthContextProvider = ({ children }) => {
             dispatch({ type: 'AUTH_IS_READY', payload: user})
             unsub()
         })
-
-
     }, [])
     // console.log('AuthContext state:', state)
 

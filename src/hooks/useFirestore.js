@@ -8,18 +8,20 @@ import { db } from '../utils/firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useFirestore = () => {
-    const [document, setDocument] = useState(null)
+    const [favoriteTeam, setFavoriteTeam] = useState(null)
+    const [cardCount, setCardCount] = useState(null)
     const [error, setError] = useState(null)
     const { user } = useAuthContext()
 
-    const getTeamTheme = async () => {
+    const getUserDocs = async () => {
         setError(null)
 
         try {
-            const docRef = doc(db, 'users', user.uid);
-            const docSnap = await getDoc(docRef);
+            const docRef = doc(db, 'users', user.uid)
+            const docSnap = await getDoc(docRef)
             if (docSnap.exists()) {
-                setDocument(docSnap.data().favoriteTeam)
+                setFavoriteTeam(docSnap.data().favoriteTeam)
+                setCardCount(docSnap.data().cardCount)
                 setError(null)
               } else {
                 setError('Document does not exist')
@@ -28,5 +30,6 @@ export const useFirestore = () => {
             setError(err.message)
         }
     }
-    return { document, error, getTeamTheme }
+
+    return { cardCount, error, favoriteTeam, getUserDocs }
 }

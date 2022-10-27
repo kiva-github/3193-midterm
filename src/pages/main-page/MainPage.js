@@ -14,26 +14,26 @@ import { useFirestore } from '../../hooks/useFirestore'
 import './MainPage.scss'
 
 export default function MainPage() {
-  const { document, getTeamTheme } = useFirestore()
+  const { favoriteTeam, getUserDocs } = useFirestore()
   
   useEffect(() => {
-    getTeamTheme()
-  }, [getTeamTheme])
+    getUserDocs()
+  }, [getUserDocs])
 
   return (
     <div>
-      {document && (
+      {favoriteTeam && (
         <div className='main-page-container'
           style={
             {
-              background: `radial-gradient(circle, rgba(${GRADIENT_DATA[document][0]}) 25%, rgba(${GRADIENT_DATA[document][1]}) 100%)`
+              background: `radial-gradient(circle, rgba(${GRADIENT_DATA[favoriteTeam][0]}) 25%, rgba(${GRADIENT_DATA[favoriteTeam][1]}) 100%)`
             }
         }>
           <Header />
           <Outlet />
         </div>
       )}
-      {!document && (
+      {!favoriteTeam && (
         <div className='main-page-container'
           style={
             {

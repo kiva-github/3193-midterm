@@ -1,0 +1,22 @@
+.card-count {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    height: 20px;
+    justify-content: flex-end;
+    padding-bottom: 12px;
+
+    h4 {
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+    }  
+
+    img {
+        border-radius: 0;
+        height: 100%;
+        padding: 0px 6px;
+        width: 14px;
+    }
+}

@@ -24,33 +24,6 @@ import S1_22_11B from '../assets/cards/series-one-2022/S1_22_11B.jpg'
 import S1_22_12A from '../assets/cards/series-one-2022/S1_22_12A.jpg'
 import S1_22_12B from '../assets/cards/series-one-2022/S1_22_12B.jpg'
 
-// 2022 Series 2 Assets
-// import S2_22_1A from '../assets/cards/series-two-2022/S2_22_331A.jpg'
-// import S2_22_1B from '../assets/cards/series-two-2022/S2_22_331B.jpg'
-// import S2_22_2A from '../assets/cards/series-two-2022/S2_22_332A.jpg'
-// import S2_22_2B from '../assets/cards/series-two-2022/S2_22_332B.jpg'
-// import S2_22_3A from '../assets/cards/series-two-2022/S2_22_333A.jpg'
-// import S2_22_3B from '../assets/cards/series-two-2022/S2_22_333B.jpg'
-// import S2_22_4A from '../assets/cards/series-two-2022/S2_22_334A.jpg'
-// import S2_22_4B from '../assets/cards/series-two-2022/S2_22_334B.jpg'
-// import S2_22_5A from '../assets/cards/series-two-2022/S2_22_335A.jpg'
-// import S2_22_5B from '../assets/cards/series-two-2022/S2_22_335B.jpg'
-// import S2_22_6A from '../assets/cards/series-two-2022/S2_22_336A.jpg'
-// import S2_22_6B from '../assets/cards/series-two-2022/S2_22_336B.jpg'
-// import S2_22_7A from '../assets/cards/series-two-2022/S2_22_337A.jpg'
-// import S2_22_7B from '../assets/cards/series-two-2022/S2_22_337B.jpg'
-// import S2_22_8A from '../assets/cards/series-two-2022/S2_22_338A.jpg'
-// import S2_22_8B from '../assets/cards/series-two-2022/S2_22_338B.jpg'
-// import S2_22_9A from '../assets/cards/series-two-2022/S2_22_339A.jpg'
-// import S2_22_9B from '../assets/cards/series-two-2022/S2_22_339B.jpg'
-// import S2_22_10A from '../assets/cards/series-two-2022/S2_22_340A.jpg'
-// import S2_22_10B from '../assets/cards/series-two-2022/S2_22_340B.jpg'
-// import S2_22_11A from '../assets/cards/series-two-2022/S2_22_341A.jpg'
-// import S2_22_11B from '../assets/cards/series-two-2022/S2_22_341B.jpg'
-// import S2_22_12A from '../assets/cards/series-two-2022/S2_22_342A.jpg'
-// import S2_22_12B from '../assets/cards/series-two-2022/S2_22_342B.jpg'
-
-
 const TEAMS = [
     'Angels',
     'Astros',
