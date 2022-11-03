@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // assets
@@ -19,27 +18,15 @@ import { useUserContext } from '../../hooks/useUserContext'
 // styles
 import './Header.scss'
 
-export default function Header({ setAuthToggle }) {
-  const [active, setActive] = useState('login')
+export default function Header() {
   const { user } = useAuthContext()
   const { cardCount, teamIndex } = useUserContext()
   const { logOut } = useLogout()
   const navigate = useNavigate()
 
-  const handleClick = (t) => {
-    setAuthToggle(t)
-    setActive(t)
-  }
-
   return (
     <header className='header-container'>
       <img src={logo} alt='Cardvault logo' height='45px'/>
-      {!user && 
-        <div className='auth-toggle'>
-          <p className={active === 'signup' ? 'underline' : ''} onClick={() => handleClick('signup')}>SIGN UP</p>
-          <p className={active === 'login' ? 'underline' : ''} onClick={() => handleClick('login')}>LOG IN</p>
-        </div>
-      }
       {user &&
         <div className='header-profile'>
           <div className='profile-info'>

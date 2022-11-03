@@ -1,7 +1,110 @@
+// X
 .authentication-container {
+    display: flex;
     height: 100vh;
     width: 100vw;
 
+    // X
+    .left-col {
+        position: relative;
+        transition: 0.2s;
+
+        // X
+        .left-col-content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            // X
+            .logo-container {
+                margin-bottom: 48px;
+            }
+        
+            // X
+            .toggle-container {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin-bottom: 36px;
+                width: 420px;
+
+                // X
+                .toggle-option {
+                    padding: 12px 0px;
+
+                    // X
+                    .underline {
+                        opacity: 1.0;
+                        position: relative; 
+                    }
+                    
+                    // X
+                    .underline::after {
+                        background: #FFFFFF;
+                        bottom: -10px;
+                        content: '';
+                        height: 2px;
+                        left: 0;
+                        margin: 0 auto;
+                        position: absolute;
+                        right: 0;
+                        transition: 0.5s;
+                        width: 100%;
+                    }
+    
+                    // X
+                    p {
+                        color: #FFFFFF;
+                        cursor: pointer;
+                        font-weight: 600;
+                        font-size: 16px;
+                        margin: 0;
+                        opacity: 0.5;
+                    }
+    
+                    // X
+                    p:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            // X
+            .logo-container {
+
+                //X
+                img {
+                    width: 194px;
+                }
+            }
+        }
+    }
+
+    // X
+    .right-col {
+        position: relative;
+        width: 50%;
+
+        // X
+        .auth-image-container {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            // X
+            img {
+                
+                width: 500px;
+            }
+        }
+    }
+
+    // X
     .error {
         color: #FFFFFF;
         font-weight: 600;

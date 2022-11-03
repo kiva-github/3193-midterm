@@ -82,11 +82,11 @@ export default function SignUp({ col }) {
           <InputBar type='email' col={col} pH='EMAIL' value={email} updateValue={setEmail}/>
           <InputBar type='password' col={col} pH='PASSWORD' value={password} updateValue={setPassword}/>
           <InputBar type='password' col={col} pH='CONFIRM PASSWORD' value={confirmPassword} updateValue={setConfirmPassword}/>
+          <div onClick={() => signup(email, password, confirmPassword, username, favoriteTeam)}>
+            {!isPending && <PrimaryBtn title='SIGN UP'/>}
+            {isPending && <PrimaryBtn title='LOADING...'/>}
+          </div>
       </InputsContainer>
-      <div onClick={() => signup(email, password, confirmPassword, username, favoriteTeam)}>
-        {!isPending && <PrimaryBtn title='SIGN UP'/>}
-        {isPending && <PrimaryBtn title='LOADING...'/>}
-      </div>
       {error && <p className='error'>{error}</p>}
     </div> 
   )

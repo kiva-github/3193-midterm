@@ -1,51 +1,9 @@
+// X
 .header-container {
     display: flex;
     justify-content: space-between;
     padding: 0px 250px;
     padding-top: 60px;
-
-    .auth-toggle {
-        display: flex;
-        gap: 24px;
-
-        .underline {
-            opacity: 1;
-            position: relative; 
-            text-decoration: none; 
-            transition: 0.5s;
-        }
-
-        .underline::after {
-            background: #FFFFFF;
-            bottom: 4px;
-            content: '';
-            height: 2px;
-            left: 0;
-            margin: 0 auto;
-            position: absolute;
-            right: 0;
-            transition: 0.5s;
-            width: 100%;
-        }
-
-        .underline:hover::after {
-            width: 90%;
-        }
-
-        p {
-            color: #FFFFFF;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 0;
-            opacity: 0.5;
-            padding: 4px 12px;
-        }
-
-        p:hover {
-            opacity: 1;
-        }
-    }
 
     .header-profile {
         align-items: center;

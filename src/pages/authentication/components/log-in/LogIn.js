@@ -25,17 +25,17 @@ export default function LogIn({ col }) {
       <InputsContainer>
           <InputBar type='email' pH='EMAIL' col={col} value={email} updateValue={setEmail}/>
           <InputBar type='password' pH='PASSWORD' col={col} value={password} updateValue={setPassword}/>
+          {!isPending &&
+            <div onClick={handleLogin}>
+              <PrimaryBtn title='LOG IN'/>
+            </div>
+          }
+          {isPending && 
+            <div onClick={handleLogin}>
+              <PrimaryBtn title='LOG IN'/>
+            </div>
+          }
       </InputsContainer>
-      {!isPending &&
-        <div onClick={handleLogin}>
-          <PrimaryBtn title='LOG IN'/>
-        </div>
-      }
-      {isPending && 
-        <div onClick={handleLogin}>
-          <PrimaryBtn title='LOG IN'/>
-        </div>
-      }
       {error && <p className='error'>{error}</p>}
     </div>
   )

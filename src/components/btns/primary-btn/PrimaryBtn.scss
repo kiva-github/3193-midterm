@@ -1,10 +1,12 @@
+// X
 .primary-btn {
     border: none;
     border-radius: 100px;
     cursor: pointer;
     filter: drop-shadow(2px 2px rgba(0,0,0,0.15));
-    width: fit-content;
+    width: 100%;
 
+    // X
     p {
         font-size: 14px;
         font-weight: 600;
