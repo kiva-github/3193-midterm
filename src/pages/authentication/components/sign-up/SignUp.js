@@ -87,6 +87,7 @@ export default function SignUp({ col }) {
             {isPending && <PrimaryBtn title='LOADING...'/>}
           </div>
       </InputsContainer>
+      <p className='agreement'><i>By continuing you agree to the</i> <b>CardVault Terms of Service</b><i>, and acknowledge you’ve read our </i><b>Privacy Policy</b>.</p>
       {error && <p className='error'>{error}</p>}
     </div> 
   )

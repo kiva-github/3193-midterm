@@ -6,6 +6,15 @@
     gap: 24px;
     width: 100%;
 
+    .agreement {
+        color: #FFFFFF;
+        font-size: 10px;
+        position: relative;
+        margin: 0;
+        max-width: 300px;
+        text-align: center;
+    }
+
     // X
     .favorite-team-select {
         border: none;

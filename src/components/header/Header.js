@@ -2,9 +2,12 @@ import { useNavigate } from 'react-router-dom'
 
 // assets
 import logo from '../../assets/system/card-vault-logo.png'
+import cardIcon from '../../assets/system/card-icon.png'
+import pointIcon from '../../assets/system/point-icon.png'
 
 // components
-import CardCount from '../card-count/CardCount'
+import HeaderDataPill from './components/header-data-pill/HeaderDataPill'
+import HeaderProfilePill from './components/header-profile-pill/HeaderProfilePill'
 import SecondaryBtn from '../btns/secondary-btn/SecondaryBtn'
 
 // data
@@ -29,13 +32,11 @@ export default function Header() {
       <img src={logo} alt='Cardvault logo' height='45px'/>
       {user &&
         <div className='header-profile'>
-          <div className='profile-info'>
-            <h1>Hello, {user.displayName}</h1>
-            <CardCount count={cardCount}/>            
-          </div>
+          <HeaderDataPill val={cardCount} img={cardIcon}/>
+          <HeaderDataPill val={cardCount} img={pointIcon}/>
           {teamIndex && 
             <div onClick={() => navigate('/account')}>
-              <img className='profile-img' src={ TEAM_LOGOS[teamIndex].logo } alt='profile img' />
+              <HeaderProfilePill val={user.displayName} img={TEAM_LOGOS[teamIndex].logo} alt=''/>
             </div>
           }
           <div onClick={logOut}>
