@@ -1,0 +1,53 @@
+.collection-card-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur( 8px );
+    background: rgba( 255, 255, 255, 0.25 );
+    border-radius: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 339px;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 294px;
+
+    .title-container {
+        align-items: center;
+        display: flex;
+        height: 48px;
+        justify-content: center;
+        margin: 0px 12px;
+    }
+
+    .col-progress {
+        display: flex;
+        gap: 12px;
+        margin: 0px 12px;
+
+        .progress-bar {
+            border: 1px solid #FFFFFF;
+            border-radius: 100px;
+            height: 20px;
+            width: 100%;
+
+            .progress {
+                background-color: #FFFFFF;
+                border-radius: 100px;
+                height: 100%;
+                position: relative;
+            }
+        }
+    }
+
+    h3, h4 {
+        font-weight: 600;
+    }
+
+    img {
+        height: 200px;
+        object-fit: cover;
+        width: 294px;
+    }
+}

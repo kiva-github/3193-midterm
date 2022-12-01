@@ -1,0 +1,20 @@
+.card-type-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    cursor: pointer;
+    height: 310px;
+    width: 223.5px;
+
+    h3 {
+        bottom: 36px;
+        color: #FFFFFF;
+        font-weight: 600;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, 0%);
+        width: 160px;
+    }
+}

@@ -1,10 +1,12 @@
+// X
 .home-container {
     display: flex;
     flex-direction: column;
     gap: 48px;
-    padding-bottom: 72px;
+    // padding-bottom: 72px;
     width: 100%;
-    
+
+    // X
     .carousel-container {
         display: flex;
         flex-direction: column;
@@ -43,12 +45,14 @@
         padding: 0px 250px;
 
         .row-header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 24px;
+
             h2 {
                 color: #FFFFFF;
-                font-size: 24px;
-                font-weight: 700;
-                margin: 0;
-                padding-bottom: 24px;
+                font-weight: 600;
                 padding-left: 12px;
             }
         }
@@ -56,18 +60,18 @@
         .cards {
             display: flex;
             gap: 24px;
+            overflow-x: scroll;
 
             .card {
                 backdrop-filter: blur(8px);
                 -webkit-backdrop-filter: blur( 8px );
                 background: rgba( 255, 255, 255, 0.25 );
-                border: 2px solid rgba( 255, 255, 255, 0.2 );
                 border-radius: 20px;
                 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
                 cursor: pointer;
                 height: 160px;
                 position: relative;
-                width: 300px;
+                width: 294px;
                 
                 .card-content {
                     bottom: 12px;
@@ -91,9 +95,5 @@
                 }
             }
         }
-    }
-
-    .explore-content {
-        opacity: 0.4;
     }
 }

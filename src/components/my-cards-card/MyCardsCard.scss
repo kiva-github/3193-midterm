@@ -1,0 +1,43 @@
+.my-cards-card-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur( 8px );
+    background: rgba( 255, 255, 255, 0.25 );
+    border-radius: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 160px;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 294px;
+
+    .card-details {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        width: fit-content;
+
+        .card-count {
+            display: flex;
+            gap: 8px;
+            height: fit-content;
+            width: fit-content;
+        
+            img {
+                height: 16px;
+                width: auto;
+            }
+        
+            h5 {
+                color: #FFFFFF;
+            }
+        }
+
+        h1, h5 {
+            font-weight: 500;
+        }
+    }
+}

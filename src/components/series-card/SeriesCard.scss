@@ -1,0 +1,53 @@
+.series-card-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    cursor: pointer;
+    height: 160px;
+    position: relative;
+    width: 294px;
+
+    .series-info-container {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        right: 18px;
+        top: 12px;
+
+        .series-card-count-container {
+            align-items: center;
+            display: flex;
+            gap: 8px;
+            width: fit-content;
+
+            h5 {
+                color: #FFFFFF;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        
+            img {
+                height: 16px;
+            }
+        }
+
+        h1 {
+            color: #FFFFFF;
+            font-weight: 600;
+            right: 12px;
+            top: 12px;
+        }
+    }
+
+    .series-cover-container {
+        img {
+            bottom: 0;
+            height: 160px;
+            left: 12px;
+            position: absolute;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.enter-card-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    .card-image-container {
+        p {
+            color: #FFFFFF;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+        }
+    }
+
+    .enter-card-btns-container {
+        display: flex;
+        justify-content: space-between;
+        width: 420px;
+    }
+
+
+    img {
+        width: 240px;
+    }
+}

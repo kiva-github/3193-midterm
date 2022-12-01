@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 // assets
 import addIcon from '../../assets/system/add-icon.png'
+import TertiaryBtn from '../../components/btns/tertiary-btn/TertiaryBtn'
 
 // components
-import CardCount from '../../components/card-count/CardCount'
-
-// context
-import { useUserContext } from '../../hooks/useUserContext'
+import CollectionCard from '../../components/collection-card/CollectionCard'
+import Footer from '../../components/footer/Footer'
+import MyCardsCard from '../../components/my-cards-card/MyCardsCard'
 
 // data
 import { CAROUSEL_IMAGES } from '../../data/carousel'
@@ -20,7 +20,6 @@ export default function Home() {
   const [seconds, setSeconds] = useState(0)
   const [carouselIndex, setCarouselIndex] = useState(0)
   const navigate = useNavigate()
-  const { cardCount } = useUserContext()
 
   useEffect(() => {
     let interval = null
@@ -53,7 +52,7 @@ export default function Home() {
 
         <div className='cards-row-container'>
           <div className='row-header'>
-            <h2>MY COLLECTION</h2>
+            <h2>MY CARDS</h2>
           </div>
           
           <div className='cards'>
@@ -63,27 +62,25 @@ export default function Home() {
                   <img className='add-icon' src={addIcon} alt='' />
                 </div>
               </div>
-              <div className='card' onClick={() => navigate('/collection/2022')}>
-                <h3>2022</h3>
-                <div className='card-content'>
-                  <CardCount count={cardCount}/>
-                </div>
-              </div>
+              <MyCardsCard path={'/collection/2022'}/>
           </div>
         </div>
 
-        <div className='cards-row-container explore-content'>
+        <div className='cards-row-container'>
           <div className='row-header'>
-            <h2>EXPLORE</h2>
+            <h2>COLLECTIONS</h2>
+            <TertiaryBtn title={"VIEW ALL"} route={'/collections'} />
           </div>
           
           <div className='cards'>
-              <div className='card'>
-                <h3>Collections</h3>
-                <div className='card-content'></div>
-              </div>
+              <CollectionCard />
+              <CollectionCard />
+              <CollectionCard />
+              <CollectionCard />
+              <CollectionCard />
           </div>
         </div>
+        <Footer />
     </div>
   )
 }
