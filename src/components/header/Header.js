@@ -1,14 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 
 // assets
-import logo from '../../assets/system/card-vault-logo.png'
 import cardIcon from '../../assets/system/card-icon.png'
+import logo from '../../assets/system/card-vault-logo.png'
 import pointIcon from '../../assets/system/point-icon.png'
+import symbol from '../../assets/system/cardvault-symbol.png'
 
 // components
 import HeaderDataPill from './components/header-data-pill/HeaderDataPill'
 import HeaderProfilePill from './components/header-profile-pill/HeaderProfilePill'
-import SecondaryBtn from '../btns/secondary-btn/SecondaryBtn'
+import TertiaryBtn from '../btns/tertiary-btn/TertiaryBtn'
 
 // data
 import { TEAM_LOGOS } from '../../data/team-logos'
@@ -21,7 +22,7 @@ import { useUserContext } from '../../hooks/useUserContext'
 // styles
 import './Header.scss'
 
-export default function Header() {
+export default function Header({ btnNav=false, navPath=false, acctStats=false, acctTab=false }) {
   const { user } = useAuthContext()
   const { cardCount, teamIndex } = useUserContext()
   const { logOut } = useLogout()
@@ -29,21 +30,29 @@ export default function Header() {
 
   return (
     <header className='header-container'>
-      <img src={logo} alt='Cardvault logo' height='45px'/>
-      {user &&
-        <div className='header-profile'>
-          <HeaderDataPill val={cardCount} img={cardIcon}/>
-          <HeaderDataPill val={cardCount} img={pointIcon}/>
-          {teamIndex && 
-            <div onClick={() => navigate('/account')}>
-              <HeaderProfilePill val={user.displayName} img={TEAM_LOGOS[teamIndex].logo} alt=''/>
-            </div>
-          }
-          <div onClick={logOut}>
-            <SecondaryBtn title={'LOG OUT'} route='' />
+      <div className='left-content'>
+        {btnNav && <TertiaryBtn title={'BACK'} />}
+        {navPath ? <img src={symbol} alt='Cardvault logo' height='20px'/> : <img src={logo} alt='Cardvault logo' height='45px'/>}
+        {navPath && <h1>{navPath}</h1>}
+      </div>
+      <div className='right-content'>
+        {acctStats &&
+          <div className='acct-stats-container'>
+            <HeaderDataPill val={cardCount} img={cardIcon}/>
+            <HeaderDataPill val={cardCount} img={pointIcon}/>
           </div>
-        </div>
-      }
+        }
+        {acctTab && teamIndex &&
+            <div className='acct-tab-container'>
+              <div onClick={() => navigate('/account')}>
+                <HeaderProfilePill val={user.displayName} img={TEAM_LOGOS.current[teamIndex].logo} alt=''/>
+              </div>
+            <div onClick={logOut}>
+              <TertiaryBtn title={'LOG OUT'} route='' />
+            </div>
+          </div>
+        }
+      </div>
     </header>
   )
 }

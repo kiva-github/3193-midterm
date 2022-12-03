@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding: 0px 250px;
+    padding: 0px 100px;
 
     .acc-settings-toggle {
         display: flex;
@@ -33,17 +33,16 @@
             width: 90%;
         }
 
-        p {
+        h3 {
             color: #FFFFFF;
             cursor: pointer;
             font-weight: 600;
-            font-size: 16px;
             margin: 0;
             opacity: 0.5;
             padding: 4px 12px;
         }
 
-        p:hover {
+        h3:hover {
             opacity: 1;
         }
     }

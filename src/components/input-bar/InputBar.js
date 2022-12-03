@@ -1,32 +1,20 @@
-// data
-import { GRADIENT_DATA } from '../../data/gradients'
-
-// firebase
+// hooks
 import { useUserContext } from '../../hooks/useUserContext'
 
 // styles
 import './InputBar.scss'
 
-export default function InputBar({ type, pH="", col, value, updateValue }) {
+export default function InputBar({ type, pH="", value, updateValue }) {
   const { teamIndex } = useUserContext()
 
   return (
     <>
       {teamIndex && (
         <input
+            className='dropshadow panel-bg'
             type={type}
             onChange={(e) => updateValue(e.target.value)}
-            style={{ backgroundColor: `rgb(${GRADIENT_DATA[teamIndex][1]})`}}
-            placeholder={pH}
-            value={value}
-        >
-        </input>
-      )}
-      {!teamIndex && (
-        <input
-            type={type}
-            onChange={(e) => updateValue(e.target.value)}
-            style={{ backgroundColor: `rgb(${col})`}}
+            style={{ bordeRadius: '22px'}}
             placeholder={pH}
             value={value}
         >

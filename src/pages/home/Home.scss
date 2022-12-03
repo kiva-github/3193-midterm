@@ -3,46 +3,9 @@
     display: flex;
     flex-direction: column;
     gap: 48px;
-    // padding-bottom: 72px;
-    width: 100%;
-
-    // X
-    .carousel-container {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 0px 250px;
-
-        .carousel-image {
-            img {
-                border-radius: 20px;
-                height: 350px;
-                object-fit: cover;
-                width: 100%;
-            }
-        }
-
-        .pagination {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 12px 0px;
-
-            .page-circle {
-                background-color: #FFFFFF;
-                border-radius: 5px;
-                height: 10px;
-                width: 10px;
-            }
-
-            .active {
-                background-color: #333333;
-            }
-        }
-    }
+    padding: 0px 100px;
 
     .cards-row-container {
-        padding: 0px 250px;
 
         .row-header {
             align-items: center;
