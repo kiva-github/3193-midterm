@@ -16,7 +16,7 @@ import './Authentication.scss'
 
 export default function Authentication() {
     const [authToggle, setAuthToggle] = useState(null)
-    const [randomInt, setRandomInt] = useState(null)
+    const [randomTeam, setRandomTeam] = useState(null)
     
     useEffect(() => {
         setAuthToggle('signin')
@@ -24,17 +24,26 @@ export default function Authentication() {
         if (random === 0) {
             random = 13
         }
-        setRandomInt(random)
+
+        var keys = Object.keys(GRADIENT_DATA)
+        var team = GRADIENT_DATA[keys[ keys.length * Math.random() << 0]]
+        console.log(team)
+
+        setRandomTeam(team)
     }, [])
+
+    useEffect(() => {
+
+    }, [randomTeam])
 
     return (
         <>
-            {randomInt && 
+            {randomTeam && 
                 <div
                     className='authentication-container'
                     style={
                         {
-                            background: `radial-gradient(circle, rgba(${GRADIENT_DATA[randomInt][0]}) 25%, rgba(${GRADIENT_DATA[randomInt][1]}) 100%)`
+                            background: `radial-gradient(circle, rgba(${randomTeam['0']}) 25%, rgba(${randomTeam['1']}) 100%)`
                         }
                 }>
                     <div
@@ -51,13 +60,13 @@ export default function Authentication() {
                             </div>
                             <div className='toggle-container'>
                                 <div className='toggle-option'>
-                                    <p className={authToggle === 'signin' ? 'underline' : ''} onClick={() => setAuthToggle('signin')}>SIGN IN</p>
+                                    <h3 className={authToggle === 'signin' ? 'underline' : ''} onClick={() => setAuthToggle('signin')}>SIGN IN</h3>
                                 </div>
                                 <div className='toggle-option'>
-                                    <p className={authToggle === 'createanaccount' ? 'underline' : ''} onClick={() => setAuthToggle('createanaccount')}>CREATE AN ACCOUNT</p>
+                                    <h3 className={authToggle === 'createanaccount' ? 'underline' : ''} onClick={() => setAuthToggle('createanaccount')}>CREATE AN ACCOUNT</h3>
                                 </div>
                             </div>
-                            {authToggle === 'signin' ? <LogIn col={GRADIENT_DATA[randomInt][1]}/> : <SignUp col={GRADIENT_DATA[randomInt][1]}/>}
+                            {authToggle === 'signin' ? <LogIn col={GRADIENT_DATA.SEA[0]}/> : <SignUp col={GRADIENT_DATA.SEA[1]}/>}
                         </div>
                     </div>
                     {authToggle === 'signin' && 

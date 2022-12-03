@@ -37,122 +37,152 @@ import YANKEES from '../assets/team-logos/AL_E_YANKEES.png'
 export const TEAM_LOGOS = {
     current: [
         {
+            teamID: 'ANA',
             logo: ANGELS,
             name: "Angels®"
         },
         {
+            teamID: 'HOU',
             logo: ASTROS,
             name: "Houston Astros®"
         },
         {
+            teamID: 'OAK',
             logo: ATHLETICS,
             name: "Oakland Athletics™"
         },
         {
+            teamID: 'TOR',
             logo: BLUE_JAYS,
             name: "Toronto Blue Jays®"
         },
         {
+            teamID: 'ATL',
             logo: BRAVES,
             name: "Atlanta Braves™"
         },
         {
+            teamID: 'MIL',
             logo: BREWERS,
             name: "Milwaukee Brewers™"
         },
         {
+            teamID: 'STL',
             logo: CARDINALS,
             name: "St. Louis Cardinals®"
         },
         {
+            teamID: 'CHC',
             logo: CUBS,
             name: "Chicago Cubs®"
         },
         {
+            teamID: 'ARI',
             logo: DIAMONDBACKS,
             name: "Arizona Diamondbacks®"
         },
         {
+            teamID: 'LAD',
             logo: DODGERS,
             name: "Los Angeles Dodgers®"
         },
         {
+            teamID: 'SF',
             logo: GIANTS,
             name: "San Francisco Giants®"
         },
         {
+            teamID: 'CLE',
             logo: GUARDIANS,
             name: "Cleveland Guardians™"
         },
         {
+            teamID: 'SEA',
             logo: MARINERS,
             name: "Seattle Mariners™"
         },
         {
+            teamID: 'FLA',
             logo: MARLINS,
             name: "Miami Marlins®"
         },
         {
+            teamID: 'NYM',
             logo: METS,
             name: "New York Mets®"
         },
         {
+            teamID: 'WSH',
             logo: NATIONALS,
             name: "Washington Nationals®"
         },
         {
+            teamID: 'BAL',
             logo: ORIOLES,
             name: "Baltimore Orioles®"
         },
         {
+            teamID: 'SD',
             logo: PADRES,
             name: "San Diego Padres™"
         },
         {
+            teamID: 'PHI',
             logo: PHILLIES,
             name: "Philadelphia Phillies®"
         },
         {
+            teamID: 'PIT',
             logo: PIRATES,
             name: "Pittsburgh Pirates®"
         },
         {
+            teamID: 'TEX',
             logo: RANGERS,
             name: "Texas Rangers®"
         },
         {
+            teamID: 'TB',
             logo: RAYS,
             name: "Tampa Bay Rays™"
         },
         {
+            teamID: 'BOS',
             logo: RED_SOX,
             name: "Boston Red Sox®"
         },
         {
+            teamID: 'CIN',
             logo: REDS,
             name: "Cincinnati Reds®"
         },
         {
+            teamID: 'COL',
             logo: ROCKIES,
             name: "Colorado Rockies™"
         },
         {
+            teamID: 'KC',
             logo: ROYALS,
             name: "Kansas City Royals®"
         },
         {
+            teamID: 'DET',
             logo: TIGERS,
             name: "Detroit Tigers®"
         },
         {
+            teamID: 'MIN',
             logo: TWINS,
             name: "Minnesota Twins®"
         },
         {
+            teamID: 'CWS',
             logo: WHITE_SOX,
             name: "Chicago White Sox®"
         },
         {
+            teamID: 'NYY',
             logo: YANKEES,
             name: "New York Yankees®"
         }

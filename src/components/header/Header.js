@@ -12,7 +12,7 @@ import HeaderProfilePill from './components/header-profile-pill/HeaderProfilePil
 import TertiaryBtn from '../btns/tertiary-btn/TertiaryBtn'
 
 // data
-import { TEAM_LOGOS } from '../../data/team-logos'
+import { TEAM_LOGOS } from '../../data/team-data'
 
 // hooks
 import { useAuthContext } from '../../hooks/useAuthContext'

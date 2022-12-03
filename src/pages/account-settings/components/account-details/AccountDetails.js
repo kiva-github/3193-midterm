@@ -1,20 +1,23 @@
+import { useState } from 'react'
+
 // components
 import ActionField from '../../../../components/action-field/ActionField'
 import InputBar from '../../../../components/input-bar/InputBar'
 import SecondaryBtn from '../../../../components/btns/secondary-btn/SecondaryBtn'
-import ValueBar from '../../../../components/value-bar/ValueBar'
+import TeamBar from '../../../../components/team-bar/TeamBar'
 
 // context
 import { useAuthContext } from '../../../../hooks/useAuthContext'
 import { useUserContext } from '../../../../hooks/useUserContext'
 
 // data
-import { TEAM_LOGOS } from '../../../../data/team-logos'
+import { TEAM_LOGOS } from '../../../../data/team-data'
 
 // styles
 import './AccountDetails.scss'
 
 export default function AccountDetails() {
+  const [changingTeam, setIsChangingTeam] = useState(false)
   const { user } = useAuthContext()
   const { teamIndex } = useUserContext()
 
@@ -22,8 +25,10 @@ export default function AccountDetails() {
     <div className='acc-details-container'>
       {teamIndex &&
         <ActionField>
-          <ValueBar val={TEAM_LOGOS.current[teamIndex].name} img={TEAM_LOGOS.current[teamIndex].logo}/>
-          <SecondaryBtn title='CHANGE TEAM' />
+          <TeamBar val={TEAM_LOGOS.current[teamIndex].name} img={TEAM_LOGOS.current[teamIndex].logo} expanded={changingTeam}/>
+          <div onClick={() => setIsChangingTeam(!changingTeam)}>
+            <SecondaryBtn title={changingTeam ? 'DONE' : 'CHANGE TEAM'} />
+          </div>
         </ActionField>
       }
       <ActionField>
