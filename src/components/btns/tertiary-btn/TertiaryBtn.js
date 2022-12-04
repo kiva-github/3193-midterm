@@ -19,7 +19,7 @@ export default function TertiaryBtn({title, route=-1}) {
   return (
     <div>
       <button className='tertiary-btn' onClick={() => handleNavigate(route)}>
-        <p>{title}</p>
+        <h5>{title}</h5>
       </button>
     </div>
   )

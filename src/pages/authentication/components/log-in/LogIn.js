@@ -11,7 +11,7 @@ import { useLogin } from '../../../../hooks/useLogin'
 // styles
 import './LogIn.scss'
 
-export default function LogIn({ col }) {
+export default function LogIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { error, isPending, logIn } = useLogin()
@@ -23,14 +23,14 @@ export default function LogIn({ col }) {
   return (
     <div className='log-in-container'>
       <InputsContainer>
-          <InputBar type='email' pH='EMAIL' col={col} value={email} updateValue={setEmail}/>
-          <InputBar type='password' pH='PASSWORD' col={col} value={password} updateValue={setPassword}/>
-          {!isPending &&
+          <InputBar type='email' pH='EMAIL' value={email} updateValue={setEmail}/>
+          <InputBar type='password' pH='PASSWORD' value={password} updateValue={setPassword}/>
+          {isPending &&
             <div onClick={handleLogin}>
-              <PrimaryBtn title='LOG IN'/>
+              <PrimaryBtn title='LOGGING IN...' disabled={true}/>
             </div>
           }
-          {isPending && 
+          {!isPending && 
             <div onClick={handleLogin}>
               <PrimaryBtn title='LOG IN'/>
             </div>

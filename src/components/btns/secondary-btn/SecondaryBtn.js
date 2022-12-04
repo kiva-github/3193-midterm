@@ -15,7 +15,7 @@ export default function SecondaryBtn({title, route=null}) {
   return (
     <div>
       <button className='secondary-btn' onClick={handleAction}>
-        <p>{title}</p>
+        <h4>{title}</h4>
       </button>
     </div>
   )

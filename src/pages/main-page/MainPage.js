@@ -1,25 +1,21 @@
 import { Outlet } from 'react-router-dom'
 
-
 // context
-import { useUserContext } from '../../hooks/useUserContext'
-
-// datas
-import { GRADIENT_DATA } from '../../data/gradients'
+import { useGradientContext } from '../../hooks/useGradientContext'
 
 // styles
 import './MainPage.scss'
 
 export default function MainPage() {
-  const { teamIndex } = useUserContext()
+  const { previewedGradients, selectedGradients } = useGradientContext()
 
   return (
     <div>
-      {teamIndex && (
+      {selectedGradients && (
         <div className='main-page-container'
           style={
             {
-              background: `radial-gradient(circle, rgba(${GRADIENT_DATA["SEA"][0]}) 25%, rgba(${GRADIENT_DATA["SEA"][1]}) 100%)`
+              background: `radial-gradient(circle, rgba(${previewedGradients ? previewedGradients['0'] : selectedGradients['0']}) 25%, rgba(${previewedGradients ? previewedGradients['1'] : selectedGradients['1']}) 100%)`
             }
           }
         >

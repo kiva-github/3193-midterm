@@ -1,13 +1,21 @@
 // styles
 import './HeaderProfilePill.scss'
 
-// assets
+// data
+import { TEAM_LOGOS } from '../../../../data/team-data'
 
-export default function HeaderProfilePill({ val, img }) {
+//
+import { useUserContext } from '../../../../hooks/useUserContext'
+import { useAuthContext } from '../../../../hooks/useAuthContext'
+
+export default function HeaderProfilePill() {
+  const { teamIndex } = useUserContext()
+  const { user } = useAuthContext()
+
   return (
     <div className='header-profile-pill-container'>
-        <img src={img} alt='' />
-        <p>{val}</p>
+        <img src={TEAM_LOGOS.current[`${teamIndex}`].logo} alt={TEAM_LOGOS.current[teamIndex].name} />
+        <h3>{user.displayName}</h3>
     </div>
   )
 }

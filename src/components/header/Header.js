@@ -11,11 +11,7 @@ import HeaderDataPill from './components/header-data-pill/HeaderDataPill'
 import HeaderProfilePill from './components/header-profile-pill/HeaderProfilePill'
 import TertiaryBtn from '../btns/tertiary-btn/TertiaryBtn'
 
-// data
-import { TEAM_LOGOS } from '../../data/team-data'
-
 // hooks
-import { useAuthContext } from '../../hooks/useAuthContext'
 import { useLogout } from '../../hooks/useLogout'
 import { useUserContext } from '../../hooks/useUserContext'
 
@@ -23,7 +19,6 @@ import { useUserContext } from '../../hooks/useUserContext'
 import './Header.scss'
 
 export default function Header({ btnNav=false, navPath=false, acctStats=false, acctTab=false }) {
-  const { user } = useAuthContext()
   const { cardCount, teamIndex } = useUserContext()
   const { logOut } = useLogout()
   const navigate = useNavigate()
@@ -45,7 +40,7 @@ export default function Header({ btnNav=false, navPath=false, acctStats=false, a
         {acctTab && teamIndex &&
             <div className='acct-tab-container'>
               <div onClick={() => navigate('/account')}>
-                <HeaderProfilePill val={user.displayName} img={TEAM_LOGOS.current[teamIndex].logo} alt=''/>
+                <HeaderProfilePill />
               </div>
             <div onClick={logOut}>
               <TertiaryBtn title={'LOG OUT'} route='' />

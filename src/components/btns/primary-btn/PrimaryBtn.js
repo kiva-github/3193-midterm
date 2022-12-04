@@ -1,10 +1,10 @@
 // styles
 import './PrimaryBtn.scss'
 
-export default function PrimaryBtn({ title }) {
+export default function PrimaryBtn({ disabled=false, title }) {
   return (
     <div>
-      <button className='primary-btn dropshadow'>
+      <button disabled={disabled} className='primary-btn dropshadow'>
         <p>{title}</p>
       </button>
     </div>

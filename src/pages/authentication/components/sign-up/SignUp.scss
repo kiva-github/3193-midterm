@@ -9,20 +9,22 @@
     .agreement {
         color: #FFFFFF;
         font-weight: 500;
-        position: relative;
         margin: 0;
         max-width: 300px;
         text-align: center;
     }
-
-    // X
+    
     .favorite-team-select {
         border: none;
         border-radius: 22px;
-        color: white;
+        color: #FFFFFF;
         height: 44px;
         font-size: 16px;
         font-weight: 700;
         text-align: center;
+    }
+
+    select:focus {
+        outline: none;
     }
 }

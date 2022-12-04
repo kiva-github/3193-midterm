@@ -1,22 +1,23 @@
 import { useState } from 'react'
 
 // context
-import { useUserContext } from '../../hooks/useUserContext'
+import { useGradientContext } from '../../hooks/useGradientContext'
 
 // data
 import { TEAM_LOGOS } from '../../data/team-data'
+import { GRADIENT_DATA } from '../../data/gradients'
 
 // styles
 import './TeamBar.scss'
 
-export default function TeamBar({ val, img, expanded=false }) {
-    const [selectedTeam, setSelectedTeam] = useState('SEA')
-    const { dispatch } = useUserContext()
+export default function TeamBar({ val, img, expanded=false, selectedTeamId}) {
+    const [selectedTeam, setSelectedTeam] = useState(selectedTeamId)
+    const { dispatch } = useGradientContext()
 
     const changeSelectedTeam = (team) => {
+        const teamObj = GRADIENT_DATA[team]
         setSelectedTeam(team)
-        dispatch({ type: 'UPDATE_TEAM', payload: team})
-
+        dispatch({ type: 'PREVIEW_BG', payload: [teamObj, team]})
     }
 
     return (
@@ -25,15 +26,15 @@ export default function TeamBar({ val, img, expanded=false }) {
                 <img className="circle-img-left" src={img} alt="" />
                 <h3>{val}</h3>
             </>}
-            {expanded && <div className='team-selection-container'>
-                {TEAM_LOGOS.current.map((team) => (
-                    <div key={team.teamID} className={team.teamID === selectedTeam ? 'team-circle selected dropshadow' : 'team-circle'} onClick={() => setSelectedTeam(team.teamID)}>
-                        <img src={team.logo} alt={team.name}/>
-                    </div>
-                ))}
-            
-            
-            </div>}
+            {expanded &&
+                <div className='team-selection-container'>
+                    {Object.keys(TEAM_LOGOS.current).map((key, index) => (
+                        <div key={index} className={TEAM_LOGOS.current[key].teamID === selectedTeam ? 'team-circle selected dropshadow' : 'team-circle'} onClick={() => changeSelectedTeam(TEAM_LOGOS.current[key].teamID)}>
+                            <img src={TEAM_LOGOS.current[key].logo} alt={TEAM_LOGOS.current[key].name}/>
+                        </div>
+                    ))}
+                </div>
+            }
         </div>
         )
 }

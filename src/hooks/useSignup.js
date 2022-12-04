@@ -17,9 +17,16 @@ export const useSignup = () => {
         setError(null)
         setIsPending(true)
 
-        if (password !== confirmPassword) {
+        if (!favoriteTeam) {
+            setError('Please select a favorite team')
+        } else if (!username) {
+            setError('Please choose a username')
+        } else if (!email) {
+            setError('Please enter your email')
+        } else if (!password) {
+            setError('Please enter password')
+        } else if (password !== confirmPassword) {
             setError('Passwords do not match')
-            setIsPending(false)
 
         } else {
             try {
@@ -44,15 +51,23 @@ export const useSignup = () => {
 
                 // dispatch LOG_IN
                 dispatch({ type: 'LOG_IN', payload: res.user })
-
-                setIsPending(false)
                 setError(null)
             }
             catch (err) {
-                setError(err.message)
-                setIsPending(false)
-            }
+                console.log(`SIGN IN ERROR IS: ${err.message}`)
+                switch (err.message) {
+                    case 'Firebase: Error (auth/email-already-in-use).':
+                        setError("An account already exists with that email.")
+                        break
+                    case 'Firebase: Error (auth/invalid-email).':
+                        setError("An error occurred, please try again later.")
+                        break
+                    default:
+                        setError(err.message)
+                }
+            }    
         }
+        setIsPending(false)
     }
     return { error, isPending, signup }
 }
