@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 // styles
 import './SecondaryBtn.scss'
 
-export default function SecondaryBtn({title, route=null}) {
+export default function SecondaryBtn({isDisabled=false, title, route=null}) {
   const navigate = useNavigate()
 
   const handleAction = () => {
@@ -14,7 +14,11 @@ export default function SecondaryBtn({title, route=null}) {
 
   return (
     <div>
-      <button className='secondary-btn' onClick={handleAction}>
+      <button
+        className='secondary-btn'
+        onClick={handleAction}
+        disabled={isDisabled}
+      >
         <h4>{title}</h4>
       </button>
     </div>

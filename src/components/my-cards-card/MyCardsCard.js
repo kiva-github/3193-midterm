@@ -6,10 +6,10 @@ import cardIcon from '../../assets/system/card-icon.png'
 // styles
 import './MyCardsCard.scss'
 
-export default function MyCardsCard({ cardCount = 239 }) {
+export default function MyCardsCard({ navRoute, cardCount = 239 }) {
     const navigate = useNavigate()
     return (
-        <div className='my-cards-card-container' onClick={() => navigate('/collection/2022')}>
+        <div className='my-cards-card-container' onClick={() => navigate(`/my-cards/${navRoute}`)}>
             <div className='card-details'>
             
                 <h1>2022</h1>

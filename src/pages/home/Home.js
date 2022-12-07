@@ -32,7 +32,7 @@ export default function Home() {
                   <img className='add-icon' src={addIcon} alt='' />
                 </div>
               </div>
-              <MyCardsCard path={'/collection/2022'}/>
+              <MyCardsCard navRoute={'2022'}/>
           </div>
         </div>
 

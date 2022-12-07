@@ -26,7 +26,7 @@ export const GradientContextProvider = ({ children }) => {
         previewedGradients: null,
         previewedGradientsId: null
     })
-    console.log('GradientContext state:', state)
+    // console.log('GradientContext state:', state)
 
     useEffect(() => {
         if (teamIndex) {

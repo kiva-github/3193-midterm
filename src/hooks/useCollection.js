@@ -7,14 +7,14 @@ import { db } from '../utils/firebase/config'
 // hooks
 import { useAuthContext } from './useAuthContext'
 
-export const useCollection = () => {
+export const useCollection = (col) => {
     const [documents, setDocuments] = useState(null)
     const { user } = useAuthContext()
 
     useEffect(() => {
         console.log('useCollection.js: useEffect() ran')
 
-        let colRef = collection(db, 'users', user.uid, 'cards')
+        let colRef = collection(db, col)
         const unsub = onSnapshot(colRef, (snapshot) => {
             let res = []
             snapshot.docs.forEach((doc) => {

@@ -7,13 +7,14 @@ import { useAuthContext } from './hooks/useAuthContext'
 import AccountSettings from './pages/account-settings/AccountSettings'
 import AddCard from './pages/add-card/AddCard'
 import Authentication from './pages/authentication/Authentication'
-import Collection from './pages/collection/Collection'
-import Collections from './pages/collections/Collections'
+import CollectionCardView from './pages/collection-card-view/CollectionCardView'
 import Home from './pages/home/Home'
 import MainPage from './pages/main-page/MainPage'
+import MyCards from './pages/my-cards/MyCards'
 import EnterCard from './pages/add-card/components/enter-card/EnterCard'
 import SeriesTypes from './pages/add-card/components/series-types/SeriesTypes'
 import Series from './pages/add-card/components/series/Series'
+import MyCardsYear from './pages/my-cards-year/MyCardsYear'
 
 function App() {
   const { authIsReady, user } = useAuthContext()
@@ -33,8 +34,9 @@ function App() {
                 <Route path=':series/:category' element={user? <SeriesTypes /> : <Navigate to='/' />} />
                 <Route path=':series/:category/:type' element={user ? <EnterCard /> : <Navigate to='/' />} />
               </Route>
-              <Route path='collections' element={user ? <Collections /> : <Navigate to='/' />} />
-              <Route path=':year/:collection' element={<Collection />} />
+              <Route path='my-cards/:year' element={<MyCardsYear />} />
+              <Route path='my-cards/:year/:series' element={<MyCards />} />
+              <Route path='my-cards/:year/:series/:cardNumber' element={<CollectionCardView />} />
             </Route>
           </Routes>
         </BrowserRouter>

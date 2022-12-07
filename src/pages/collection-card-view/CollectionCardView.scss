@@ -1,0 +1,50 @@
+.collection-card-view-container {
+    padding: 0px 100px;
+
+    .card-content {
+        display: flex;
+        height: 440px;
+        justify-content: center;
+        margin-top: 100px;
+
+        .card-details-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: flex-end;
+            width: 420px;
+
+            .names-container {
+                display: flex;
+                flex-direction: column;
+    
+                p {
+                    color: rgba(255, 255, 255, 0.1);
+                    font-size: 72px;
+                    font-weight: 700;
+                    line-height: 72px;
+                }
+            }
+
+            .attributes-container {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            h1 {
+                color: rgba(255, 255, 255, 0.1);
+                font-weight: 400;
+            }
+        }
+    
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 240px;
+            height: 440px;
+
+        }
+    }
+}
