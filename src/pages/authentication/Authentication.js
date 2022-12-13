@@ -8,14 +8,14 @@ import logo from '../../assets/system/card-vault-logo.png'
 import LogIn from './components/log-in/LogIn'
 import SignUp from './components/sign-up/SignUp'
 
+// context
+import { useGradientContext } from '../../hooks/useGradientContext'
+
 // data
 import { GRADIENT_DATA } from '../../data/gradients'
 
 // styles
 import './Authentication.scss'
-
-// context
-import { useGradientContext } from '../../hooks/useGradientContext'
 
 export default function Authentication() {
     const { generatedGradients, selectedGradients, dispatch } = useGradientContext()
@@ -58,7 +58,7 @@ export default function Authentication() {
                                         <h3 className={authToggle === 'createanaccount' ? 'underline' : ''} onClick={() => setAuthToggle('createanaccount')}>CREATE AN ACCOUNT</h3>
                                     </div>
                                 </div>
-                                {authToggle === 'signin' ? <LogIn /> : <SignUp col={`${!selectedGradients ? generatedGradients['1'] : selectedGradients['1']}`} />}
+                                {authToggle === 'signin' ? <LogIn /> : <SignUp />}
                             </div>
                         </div>
                         {authToggle === 'signin' && 

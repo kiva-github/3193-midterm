@@ -37,309 +37,309 @@ import S1_22_18B from '../../../../assets/cards/2022/S1_22/S1_22_18B.png'
 
 export const S1_22_base = [
     {
-       name:[
-          "Shohei Ohtani"
-       ],
-       team:[
-          "Angels®"
-       ],
-       cardAttributes:[
-          
-       ],
-       cardNumber: "1",
-       imgs:{
-         front: S1_22_1A,
-         back: S1_22_1B
-       },
-       cardType: "base"
+        "name":[
+            "Shohei Ohtani"
+        ],
+        "team":[
+            "Angels\u00ae"
+        ],
+        "cardAttributes":[
+            
+        ],
+        "cardNumber":"1",
+        "imgs":{
+            "front": S1_22_1A,
+            "back": S1_22_1B
+        },
+        "cardType":"base"
     },
     {
-       name:[
-          "Craig Kimbrel"
-       ],
-       team:[
-          "Chicago White Sox®"
-       ],
-       cardAttributes:[
-          
-       ],
-       cardNumber: "2",
-       imgs:{
-          front: S1_22_2A,
-          back: S1_22_2B
-       },
-       cardType: "base"
+        "name":[
+            "Craig Kimbrel"
+        ],
+        "team":[
+            "Chicago White Sox\u00ae"
+        ],
+        "cardAttributes":[
+            
+        ],
+        "cardNumber":"2",
+        "imgs":{
+            "front": S1_22_2A,
+            "back": S1_22_2B
+        },
+        "cardType":"base"
     },
     {
-       name:[
-          "Huascar Ynoa"
-       ],
-       team:[
-          "Atlanta Braves™"
-       ],
-       cardAttributes:[
-          
-       ],
-       cardNumber: "3",
-       imgs:{
-          front: S1_22_3A,
-          back: S1_22_3B
-       },
-       cardType: "base"
+        "name":[
+            "Huascar Ynoa"
+        ],
+        "team":[
+            "Atlanta Braves\u2122"
+        ],
+        "cardAttributes":[
+            
+        ],
+        "cardNumber":"3",
+        "imgs":{
+            "front": S1_22_3A,
+            "back": S1_22_3B
+        },
+        "cardType":"base"
     },
     {
-       name:[
-          "Travis d'Arnaud"
-       ],
-       team:[
-          "Atlanta Braves™"
-       ],
-       cardAttributes:[
-
-       ],
-       cardNumber: "4",
-       imgs:{
-          front: S1_22_4A,
-          back: S1_22_4B
-       },
-       cardType:"base"
+        "name":[
+            "Travis d'Arnaud"
+        ],
+        "team":[
+            "Atlanta Braves\u2122"
+        ],
+        "cardAttributes":[
+            
+        ],
+        "cardNumber":"4",
+        "imgs":{
+            "front": S1_22_4A,
+            "back": S1_22_4B
+        },
+        "cardType":"base"
     },
     {
-       name:[
-          "Rougned Odor"
-       ],
-       team:[
-          "New York Yankees®"
-       ],
-       cardAttributes:[
-
-       ],
-       cardNumber: "5",
-       imgs:{
-          front: S1_22_5A,
-          back: S1_22_5B
-       },
-       "cardType":"base"
+        "name":[
+            "Rougned Odor"
+        ],
+        "team":[
+            "New York Yankees\u00ae"
+        ],
+        "cardAttributes":[
+            
+        ],
+        "cardNumber":"5",
+        "imgs":{
+            "front": S1_22_5A,
+            "back": S1_22_5B
+        },
+        "cardType":"base"
     },
     {
-       name:[
-          "Jazz Chisholm Jr."
-       ],
-       team:[
-          "Miami Marlins®"
-       ],
-       cardAttributes:[
-          "Future Stars"
-       ],
-       cardNumber: "6",
-       imgs:{
-          front: S1_22_6A,
-          back: S1_22_6B
-       },
-       "cardType":"base"
+        "name":[
+            "Jazz Chisholm Jr."
+        ],
+        "team":[
+            "Miami Marlins\u00ae"
+        ],
+        "cardAttributes":[
+            "Future Stars"
+        ],
+        "cardNumber":"6",
+        "imgs":{
+            "front": S1_22_6A,
+            "back": S1_22_6B
+        },
+        "cardType":"base"
     },
     {
-        name:[
-           "Bobby Dalbec"
+        "name":[
+            "Bobby Dalbec"
         ],
-        team:[
-           "Boston Red Sox®"
+        "team":[
+            "Boston Red Sox\u00ae"
         ],
-        cardAttributes:[
-           "Future Stars"
+        "cardAttributes":[
+            "Future Stars"
         ],
-        cardNumber: "7",
-        imgs:{
-           front: S1_22_7A,
-           back: S1_22_7B
+        "cardNumber":"7",
+        "imgs":{
+            "front": S1_22_7A,
+            "back": S1_22_7B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Xander Bogaerts"
+    },
+    {
+        "name":[
+            "Xander Bogaerts"
         ],
-        team:[
-           "Boston Red Sox®"
+        "team":[
+            "Boston Red Sox\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "8",
-        imgs:{
-           front: S1_22_8A,
-           back: S1_22_8B
+        "cardNumber":"8",
+        "imgs":{
+            "front": S1_22_8A,
+            "back": S1_22_8B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Elieser Hernandez"
+    },
+    {
+        "name":[
+            "Elieser Hernandez"
         ],
-        team:[
-           "Miami Marlins®"
+        "team":[
+            "Miami Marlins\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "9",
-        imgs:{
-           front: S1_22_9A,
-           back: S1_22_9B
+        "cardNumber":"9",
+        "imgs":{
+            "front": S1_22_9A,
+            "back": S1_22_9B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "9"
+    },
+    {
+        "name":[
+            "Archie Bradley"
         ],
-        team:[
-           "Philadelphia Phillies®"
+        "team":[
+            "Philadelphia Phillies\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "10",
-        imgs:{
-           front: S1_22_10A,
-           back: S1_22_10B
+        "cardNumber":"10",
+        "imgs":{
+            "front": S1_22_10A,
+            "back": S1_22_10B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Jesus Luzardo"
+    },
+    {
+        "name":[
+            "Jesus Luzardo"
         ],
-        team:[
-           "Miami Marlins®"
+        "team":[
+            "Miami Marlins\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "11",
-        imgs:{
-           front: S1_22_11A,
-           back: S1_22_11B
+        "cardNumber":"11",
+        "imgs":{
+            "front": S1_22_11A,
+            "back": S1_22_11B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Gavin Sheets"
+    },
+    {
+        "name":[
+            "Gavin Sheets"
         ],
-        team:[
-           "Chicago White Sox®"
+        "team":[
+            "Chicago White Sox\u00ae"
         ],
-        cardAttributes:[
-           "Rookie Card"
+        "cardAttributes":[
+            "Rookie Card"
         ],
-        cardNumber: "12",
-        imgs:{
-           front: S1_22_12A,
-           back: S1_22_12B
+        "cardNumber":"12",
+        "imgs":{
+            "front": S1_22_12A,
+            "back": S1_22_12B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Freddy Peralta"
+    },
+    {
+        "name":[
+            "Freddy Peralta"
         ],
-        team:[
-           "Milwaukee Brewers™"
+        "team":[
+            "Milwaukee Brewers\u2122"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "13",
-        imgs:{
-           front: S1_22_13A,
-           back: S1_22_13B
+        "cardNumber":"13",
+        "imgs":{
+            "front": S1_22_13A,
+            "back": S1_22_13B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Amed Rosario"
+    },
+    {
+        "name":[
+            "Amed Rosario"
         ],
-        team:[
-           "Cleveland Guardians™"
+        "team":[
+            "Cleveland Guardians\u2122"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "14",
-        imgs:{
-           front: S1_22_14A,
-           back: S1_22_14B
+        "cardNumber":"14",
+        "imgs":{
+            "front": S1_22_14A,
+            "back": S1_22_14B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Jose Iglesias"
+    },
+    {
+        "name":[
+            "Jose Iglesias"
         ],
-        team:[
-           "Boston Red Sox®"
+        "team":[
+            "Boston Red Sox\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "15",
-        imgs:{
-           front: S1_22_15A,
-           back: S1_22_15B
+        "cardNumber":"15",
+        "imgs":{
+            "front": S1_22_15A,
+            "back": S1_22_15B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Tommy Pham"
+    },
+    {
+        "name":[
+            "Tommy Pham"
         ],
-        team:[
-           "San Diego Padres™"
+        "team":[
+            "San Diego Padres\u2122"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "16",
-        imgs:{
-           front: S1_22_16A,
-           back: S1_22_16B
+        "cardNumber":"16",
+        "imgs":{
+            "front": S1_22_16A,
+            "back": S1_22_16B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Gregory Soto"
+    },
+    {
+        "name":[
+            "Gregory Soto"
         ],
-        team:[
-           "Detroit Tigers®"
+        "team":[
+            "Detroit Tigers\u00ae"
         ],
-        cardAttributes:[
-           
+        "cardAttributes":[
+            
         ],
-        cardNumber: "17",
-        imgs:{
-           front: S1_22_17A,
-           back: S1_22_17B
+        "cardNumber":"17",
+        "imgs":{
+            "front": S1_22_17A,
+            "back": S1_22_17B
         },
         "cardType":"base"
-     },
-     {
-        name:[
-           "Emmanuel Rivera"
+    },
+    {
+        "name":[
+            "Emmanuel Rivera"
         ],
-        team:[
-           "Kansas City Royals®"
+        "team":[
+            "Kansas City Royals\u00ae"
         ],
-        cardAttributes:[
-           "Rookie Card"
+        "cardAttributes":[
+            "Rookie Card"
         ],
-        cardNumber: "18",
-        imgs:{
-           front: S1_22_18A,
-           back: S1_22_18B
+        "cardNumber":"18",
+        "imgs":{
+            "front": S1_22_18A,
+            "back": S1_22_18B
         },
         "cardType":"base"
-     }   
+    }
 ]

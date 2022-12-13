@@ -26,7 +26,7 @@ export default function Header({ btnNav=false, navPath=false, acctStats=false, a
   return (
     <header className='header-container'>
       <div className='left-content'>
-        {btnNav && <TertiaryBtn title={'BACK'} />}
+        {btnNav && <TertiaryBtn title={'BACK'} route={btnNav}/>}
         {navPath ? <img src={symbol} alt='Cardvault logo' height='20px'/> : <img src={logo} alt='Cardvault logo' height='45px'/>}
         {navPath && <h1>{navPath}</h1>}
       </div>

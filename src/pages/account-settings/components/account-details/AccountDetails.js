@@ -8,8 +8,8 @@ import TeamBar from '../../../../components/team-bar/TeamBar'
 
 // context
 import { useAuthContext } from '../../../../hooks/useAuthContext'
-import { useUserContext } from '../../../../hooks/useUserContext'
 import { useGradientContext } from '../../../../hooks/useGradientContext'
+import { useUserContext } from '../../../../hooks/useUserContext'
 
 // data
 import { TEAM_LOGOS } from '../../../../data/team-data'
@@ -31,7 +31,6 @@ export default function AccountDetails() {
   const { user } = useAuthContext()
   const { teamIndex } = useUserContext()
   const { dispatch, previewedGradients, previewedGradientsId, selectedGradients} = useGradientContext()
-
   const loginAuth = getAuth()
   const signInProvider = new OAuthProvider()
 
@@ -42,6 +41,7 @@ export default function AccountDetails() {
         .then((res) => {
           const userRes = res.user
           const credential = OAuthProvider.credentialFromResult(res);
+          console.log(userRes, credential)
         })
     } catch (err) {
       console.log(err.message)

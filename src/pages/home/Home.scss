@@ -23,7 +23,6 @@
         .cards {
             display: flex;
             gap: 24px;
-            overflow-x: scroll;
 
             .card {
                 backdrop-filter: blur(8px);

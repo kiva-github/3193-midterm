@@ -7,7 +7,7 @@ import InputsContainer from '../../../../components/inputs-container/InputsConta
 import PrimaryBtn from '../../../../components/btns/primary-btn/PrimaryBtn'
 
 // context
-import { useGradientContext} from '../../../../hooks/useGradientContext'
+import { useGradientContext } from '../../../../hooks/useGradientContext'
 
 // data
 import { GRADIENT_DATA } from '../../../../data/gradients.js'
@@ -18,14 +18,14 @@ import { useSignup } from '../../../../hooks/useSignup'
 // styles
 import './SignUp.scss'
 
-export default function SignUp({ col }) {
+export default function SignUp() {
   const [favoriteTeam, setFavoriteTeam] = useState()
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const { error, isPending, signup } = useSignup()
-  const { dispatch } = useGradientContext()
+  const { dispatch, generatedGradients, selectedGradients } = useGradientContext()
 
   const handleChange = (e) => {
     setFavoriteTeam(e.target.value)
@@ -48,7 +48,7 @@ export default function SignUp({ col }) {
             name='teams'
             id='teams'
             onChange={handleChange}
-            style={{ backgroundColor: `rgb(${col})`}}
+            style={{ backgroundColor: `rgb(${!selectedGradients ? generatedGradients['1'] : selectedGradients['1']})`}}
           >
             <option value='' defaultValue>SELECT YOUR FAVORITE TEAM</option>
             <option value='' disabled>---AL WEST---</option>
@@ -88,19 +88,18 @@ export default function SignUp({ col }) {
               <option value='WSH'>Washington Nationals®</option>
               <option value='PHI'>Philadelphia Phillies®</option>
           </select>
-          <InputBar type='text' col={col} pH='USERNAME' value={username} updateValue={setUsername}/>
-          <InputBar type='email' col={col} pH='EMAIL' value={email} updateValue={setEmail}/>
-          <InputBar type='password' col={col} pH='PASSWORD' value={password} updateValue={setPassword}/>
-          <InputBar type='password' col={col} pH='CONFIRM PASSWORD' value={confirmPassword} updateValue={setConfirmPassword}/>
+          <InputBar type='text' pH='USERNAME' value={username} updateValue={setUsername}/>
+          <InputBar type='email' pH='EMAIL' value={email} updateValue={setEmail}/>
+          <InputBar type='password' pH='PASSWORD' value={password} updateValue={setPassword}/>
+          <InputBar type='password' pH='CONFIRM PASSWORD' value={confirmPassword} updateValue={setConfirmPassword}/>
           <div onClick={() => signup(email, password, confirmPassword, username, favoriteTeam)}>
             {!isPending && <PrimaryBtn title='SIGN UP'/>}
             {isPending && <PrimaryBtn title='LOADING...'/>}
           </div>
       </InputsContainer>
       <h6 className='agreement'><i>By continuing you agree to the</i> <b>CardVault Terms of Service</b><i>, and acknowledge you’ve read our </i><b>Privacy Policy</b>.</h6>
-      
     </div> 
-    {error && <ErrorPopup message={error} bgCol={col}/>}
+    {error && <ErrorPopup message={error} />}
     </>
   )
 }

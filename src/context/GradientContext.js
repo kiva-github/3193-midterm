@@ -26,11 +26,11 @@ export const GradientContextProvider = ({ children }) => {
         previewedGradients: null,
         previewedGradientsId: null
     })
-    // console.log('GradientContext state:', state)
+    console.log('GradientContext state:', state)
 
     useEffect(() => {
         if (teamIndex) {
-            console.log(GRADIENT_DATA[teamIndex])
+            // console.log(GRADIENT_DATA[teamIndex])
             dispatch({ type: 'SET_BG', payload: GRADIENT_DATA[teamIndex] })
         }
     }, [teamIndex])

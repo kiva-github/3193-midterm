@@ -5,9 +5,9 @@ import SeriesCard from '../../../../components/series-card/SeriesCard'
 import { PACKS_DATA } from '../../../../data/packs'
 
 // styles
-import './Series.scss'
+import './SeriesSelection.scss'
 
-export default function Series() {
+export default function SeriesSelection() {
   return (
     <div className='year-container'>
       <h2>2022</h2>

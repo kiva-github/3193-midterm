@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 // styles
 import './ErrorPopup.scss'
 
-export default function ErrorPopup({ message, bgCol }) {
+export default function ErrorPopup({ message }) {
   const [isDisplayed, setIsDisplayed] = useState(true)
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function ErrorPopup({ message, bgCol }) {
   }, [])
 
   return isDisplayed ?
-    <div className='error-popup-container dropshadow' style={{ display: `${isDisplayed}`, backgroundColor: `rgb(${bgCol})`}}>
+    <div className='error-popup-container dropshadow panel-bg' style={{ display: `${isDisplayed}`}}>
       <h3>{message}</h3>
     </div>
     :

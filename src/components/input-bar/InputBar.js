@@ -8,7 +8,7 @@ export default function InputBar({ type, pH="", value, updateValue }) {
           className='dropshadow panel-bg'
           type={type}
           onChange={(e) => updateValue(e.target.value)}
-          style={{ bordeRadius: '22px'}}
+          style={{ borderRadius: '22px'}}
           placeholder={pH}
           value={value}
       >

@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useGradientContext } from '../../hooks/useGradientContext'
 
 // data
-import { TEAM_LOGOS } from '../../data/team-data'
 import { GRADIENT_DATA } from '../../data/gradients'
+import { TEAM_LOGOS } from '../../data/team-data'
 
 // styles
 import './TeamBar.scss'

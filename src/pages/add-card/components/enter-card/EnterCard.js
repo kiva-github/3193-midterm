@@ -7,52 +7,65 @@ import blankCard from '../../../../assets/cards/2022-blank-base.png'
 // components
 import InputBar from '../../../../components/input-bar/InputBar'
 import InputsContainer from '../../../../components/inputs-container/InputsContainer'
-import ErrorPopup from '../../../../components/error-popup/ErrorPopup'
 import PrimaryBtn from '../../../../components/btns/primary-btn/PrimaryBtn'
 import TertiaryBtn from '../../../../components/btns/tertiary-btn/TertiaryBtn'
 
-// data
-import { US_2022_base } from '../../../../data/cards-data/2022/US_2022/US_2022_base'
+// context
+import { useCardContext } from '../../../../hooks/useCardContext'
+
+// hooks
+import { useFirestore } from '../../../../hooks/useFirestore'
 
 // styles
 import './EnterCard.scss'
 
-export default function EnterCard({ col }) {
-    const [cardNumber, setCardNumber] = useState('')
+export default function EnterCard() {
+    const [enteredCardNumber, setEnteredCardNumber] = useState('')
     const [cardQuantity, setCardQuantity] = useState(1)
     const [currCard, setCurrCard] = useState(null)
-    const [error, setError] = useState(null)
-    const { type } = useParams()
+    const { cardData } = useCardContext()
+    const { series, category, type } = useParams()
+    const { addCard } = useFirestore()
 
     const handleClick = () => {
         if (!currCard) {
-            setError("Could not find card.")
+            alert("Card not found.")
         } else {
-            console.log(currCard, cardNumber)
-        }
-        // check if card number is valid
-        // retreive card collection data
-        // add / update card value in collection
-
-        console.log(type)
+            if (!cardData) {
+                alert("Error loading cards.")
+            } else {
+                addCard(series, category, type, currCard, cardQuantity)
+                    .then(() => {
+                        alert('Card added!')
+                    })
+            }
+        }  
     }
 
     useEffect(() => {
-        if (parseInt(cardNumber) <= 330) {
-            setCurrCard(US_2022_base[cardNumber - 1])
-        } else {
-            setCurrCard(null)
+        if (enteredCardNumber) {
+            if (cardData) {
+                const lowerRange = cardData[0].cardNumber
+                const upperRange = cardData[cardData.length - 1].cardNumber
+                if (parseInt(enteredCardNumber) >= lowerRange && parseInt(enteredCardNumber) <= upperRange) {
+                    setCurrCard(cardData[enteredCardNumber - lowerRange])
+                } else {
+                    setCurrCard(null)
+                }
+            }
         }
-    }, [cardNumber])
+    }, [cardData, enteredCardNumber])
 
     const adjustQuantity = (step) => {
-        const currCount = cardQuantity;
-        if (currCount === 1 && step === -1) {
-            return
-        } else if (currCount === 99 && step === 1) {
-            return
-        } else {
-            setCardQuantity(currCount + step)
+        if (currCard !== null) {
+            const currCount = cardQuantity;
+            if (currCount === 1 && step === -1) {
+                return
+            } else if (currCount === 99 && step === 1) {
+                return
+            } else {
+                setCardQuantity(currCount + step)
+            }
         }
     }
 
@@ -65,25 +78,23 @@ export default function EnterCard({ col }) {
             
             <div style={{ width:"420px"}}>
                 <InputsContainer>
-                    <InputBar type='text' col={col} pH='ENTER CARD NUMBER' value={cardNumber.toUpperCase()} updateValue={setCardNumber}/>
+                    <InputBar type='text' pH='ENTER CARD NUMBER' value={enteredCardNumber.toUpperCase()} updateValue={setEnteredCardNumber}/>
                 </InputsContainer>
             </div>
 
             <div className='enter-card-btns-container'>
                 <div onClick={() => adjustQuantity(-1)}>
-                    <TertiaryBtn title={"-"} route={null}/>
+                    <TertiaryBtn title={"-"} route={null} disabled={currCard === null}/>
                 </div>
 
                 <div onClick={handleClick}>
-                    <PrimaryBtn title={`ADD ${cardQuantity}x`} />
+                    <PrimaryBtn title={`ADD ${cardQuantity}x`} disabled={currCard === null} />
                 </div>
 
                 <div onClick={() => adjustQuantity(1)}>
-                    <TertiaryBtn title={"+"} route={null}/>
+                    <TertiaryBtn title={"+"} route={null} disabled={currCard === null}/>
                 </div>
             </div>
-
-            {error && <ErrorPopup message={"Could not find that card."} />}
         </div>
     )
 }

@@ -1,11 +1,12 @@
 import { useState } from 'react'
+
 // components
 import AccountDetails from './components/account-details/AccountDetails'
 import ChangePassword from './components/change-password/ChangePassword'
+import Header from '../../components/header/Header'
 
 // styles
 import './AccountSettings.scss'
-import Header from '../../components/header/Header'
 
 export default function AccountSettings() {
   const [active, setActive] = useState('details')

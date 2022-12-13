@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 // styles
 import './TertiaryBtn.scss'
 
-export default function TertiaryBtn({title, route=-1}) {
+export default function TertiaryBtn({title, route=-1, disabled=false}) {
   const navigate = useNavigate()
 
   const handleNavigate = (r) => {
@@ -18,7 +18,7 @@ export default function TertiaryBtn({title, route=-1}) {
 
   return (
     <div>
-      <button className='tertiary-btn' onClick={() => handleNavigate(route)}>
+      <button className='tertiary-btn' onClick={() => handleNavigate(route)} disabled={disabled}>
         <h5>{title}</h5>
       </button>
     </div>

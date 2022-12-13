@@ -1,12 +1,12 @@
-// styles
-import './HeaderProfilePill.scss'
+// context
+import { useAuthContext } from '../../../../hooks/useAuthContext'
+import { useUserContext } from '../../../../hooks/useUserContext'
 
 // data
 import { TEAM_LOGOS } from '../../../../data/team-data'
 
-//
-import { useUserContext } from '../../../../hooks/useUserContext'
-import { useAuthContext } from '../../../../hooks/useAuthContext'
+// styles
+import './HeaderProfilePill.scss'
 
 export default function HeaderProfilePill() {
   const { teamIndex } = useUserContext()

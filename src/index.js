@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { AuthContextProvider } from './context/AuthContext'
 import { UserContextProvider } from './context/UserContext'
 import { GradientContextProvider } from './context/GradientContext';
+import { CardContextProvider } from './context/CardContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <AuthContextProvider>
       <UserContextProvider>
         <GradientContextProvider>
-          <App />
+          <CardContextProvider>
+            <App />
+          </CardContextProvider>
         </GradientContextProvider>
       </UserContextProvider>
     </AuthContextProvider>

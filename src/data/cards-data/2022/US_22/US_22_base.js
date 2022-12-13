@@ -1,15 +1,15 @@
-import US_22_1A from '../../../../assets/cards/2022/US_2022/US_22_1A.jpg'
-import US_22_1B from '../../../../assets/cards/2022/US_2022/US_22_1B.jpg'
-import US_22_2A from '../../../../assets/cards/2022/US_2022/US_22_2A.jpg'
-import US_22_2B from '../../../../assets/cards/2022/US_2022/US_22_2B.jpg'
-import US_22_3A from '../../../../assets/cards/2022/US_2022/US_22_3A.jpg'
-import US_22_3B from '../../../../assets/cards/2022/US_2022/US_22_3B.jpg'
-import US_22_4A from '../../../../assets/cards/2022/US_2022/US_22_4A.jpg'
-import US_22_4B from '../../../../assets/cards/2022/US_2022/US_22_4B.jpg'
-import US_22_5A from '../../../../assets/cards/2022/US_2022/US_22_5A.jpg'
-import US_22_5B from '../../../../assets/cards/2022/US_2022/US_22_5B.jpg'
+import US_22_1A from '../../../../assets/cards/2022-blank-base.png'
+import US_22_1B from '../../../../assets/cards/2022-blank-base.png'
+import US_22_2A from '../../../../assets/cards/2022-blank-base.png'
+import US_22_2B from '../../../../assets/cards/2022-blank-base.png'
+import US_22_3A from '../../../../assets/cards/2022-blank-base.png'
+import US_22_3B from '../../../../assets/cards/2022-blank-base.png'
+import US_22_4A from '../../../../assets/cards/2022-blank-base.png'
+import US_22_4B from '../../../../assets/cards/2022-blank-base.png'
+import US_22_5A from '../../../../assets/cards/2022-blank-base.png'
+import US_22_5B from '../../../../assets/cards/2022-blank-base.png'
 
-export const US_2022_base = [
+export const US_22_base = [
     {
        name:[
           "Max Scherzer"
